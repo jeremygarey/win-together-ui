@@ -1,0 +1,67 @@
+<template>
+  <footer>
+    <div class="bg-gray-800 text-gray-400 p-10">
+      <div class="max-w-screen-lg mx-auto">
+        <div class="grid grid-cols-4 gap-14">
+          <div class="col-span-2">
+            <img src="@/assets/logos/logo-wide-light.svg" alt="" />
+            <p>Sign up for our newsletter and future updates</p>
+            <div class="flex mt-4">
+              <input
+                type="text"
+                class="rounded-l-lg text-gray-800 px-3 outline-none"
+              />
+              <button
+                class="
+                  p-1
+                  px-3
+                  bg-gray-500
+                  text-white
+                  rounded-r-lg
+                  hover:bg-gray-600
+                  transition
+                "
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-white">COMPANY</h1>
+            <ul>
+              <li class="hover:text-white transition">
+                <RouterLink to="/">Home</RouterLink>
+              </li>
+              <li class="hover:text-white transition">
+                <RouterLink to="/what-we-do">What We Do</RouterLink>
+              </li>
+              <li class="hover:text-white transition">
+                <RouterLink to="/who-we-are">Who We Are</RouterLink>
+              </li>
+              <li class="hover:text-white transition">
+                <RouterLink to="/gxn">Government Excellence Network</RouterLink>
+              </li>
+              <li class="hover:text-white transition">
+                <RouterLink to="/blog">Blog</RouterLink>
+              </li>
+              <li class="hover:text-white transition">
+                <RouterLink to="/contact">Contact</RouterLink>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h1 class="font-bold text-white">SOCIAL</h1>
+            <ul>
+              <li>
+                <a class="hover:text-white transition" href="/">Twitter</a>
+              </li>
+              <li>
+                <a class="hover:text-white transition" href="/">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>
