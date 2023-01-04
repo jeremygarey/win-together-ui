@@ -8,8 +8,9 @@ module.exports = {
     colors: {
       transparent: "transparent",
       green: "#8CC63F",
+      darkergreen: "#77ab33",
       white: colors.white,
-
+      black: colors.black,
       gray: {
         50: "#f7f7f7",
         100: "#ededed",
@@ -23,7 +24,38 @@ module.exports = {
         900: "#161616",
       },
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        slidefromleft: {
+          "0%": {
+            opacity: "0%",
+            transform: "translateX(-100px)",
+          },
+          "100%": {
+            opacity: "100%",
+            transform: "translateX(0px)",
+          },
+        },
+        slidefrombottom: {
+          "0%": {
+            opacity: "0%",
+            transform: "translateY(80px)",
+          },
+          "100%": {
+            opacity: "100%",
+            transform: "translateY(0px)",
+          },
+        },
+      },
+      animation: {
+        slidefromleft:
+          "slidefromleft 900ms forwards cubic-bezier(.3,.03,.17,.98)",
+        slidefrombottom:
+          "slidefrombottom 900ms forwards cubic-bezier(.3,.03,.17,.98)",
+        slidefrombottomdelay400:
+          "slidefrombottom 900ms forwards cubic-bezier(.3,.03,.17,.98)",
+      },
+    },
   },
   plugins: [],
 };

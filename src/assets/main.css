@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    button {
+        @apply font-semibold bg-green py-2 px-3 rounded-full hover:bg-darkergreen transition;
+    }
+}
+
+@layer utilities {
+    .animation-delay-75 {
+      animation-delay: 75ms;
+    }
+    .animation-delay-500 {
+      animation-delay: 500ms;
+    }
+    .animation-delay-1000 {
+      animation-delay: 1s;
+    }
+  }

@@ -2,13 +2,13 @@
 <template>
   <div
     class="text-gray-800 fixed top-0 left-0 right-0 transition duration-300"
-    :class="scrollPosition > 10 ? 'bg-transparent text-white' : 'bg-white'"
+    :class="scrollPosition < 10 ? 'bg-transparent text-white' : 'bg-white'"
   >
     <ul class="flex items-center px-4 max-w-screen-lg mx-auto">
       <li class="mr-4">
         <router-link to="/" active-class="text-green">
           <img
-            v-if="scrollPosition <= 10"
+            v-if="scrollPosition >= 10"
             class="hover:scale-105 w-14 transition duration-300"
             src="@/assets/logos/logo-dark.svg"
           />
