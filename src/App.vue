@@ -5,10 +5,10 @@ import TheFooter from "./components/TheFooter.vue";
 
 <template>
   <header>
-    <TheNav class="text-gray-800" />
+    <TheNav />
   </header>
 
-  <RouterView class="max-w-screen-lg mx-auto text-gray-800" />
+  <RouterView class="mx-auto text-gray-800" />
 
   <TheFooter />
 </template>
