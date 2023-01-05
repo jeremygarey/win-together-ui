@@ -52,8 +52,6 @@ module.exports = {
           "slidefromleft 900ms forwards cubic-bezier(.3,.03,.17,.98)",
         slidefrombottom:
           "slidefrombottom 900ms forwards cubic-bezier(.3,.03,.17,.98)",
-        slidefrombottomdelay400:
-          "slidefrombottom 900ms forwards cubic-bezier(.3,.03,.17,.98)",
       },
     },
   },

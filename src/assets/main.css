@@ -4,7 +4,16 @@
 
 @layer base {
     button {
-        @apply font-semibold bg-green py-2 px-3 rounded-full hover:bg-darkergreen transition;
+        @apply font-semibold bg-green text-white py-2 px-3 rounded-full hover:bg-darkergreen transition;
+    }
+    h1 {
+      @apply text-3xl font-bold uppercase
+    }
+    h2 {
+      @apply text-2xl font-bold uppercase
+    }
+    h3 {
+      @apply text-xl font-bold uppercase
     }
 }
 

@@ -13,11 +13,9 @@
               />
               <button
                 class="
-                  p-1
-                  px-3
                   bg-gray-500
                   text-white
-                  rounded-r-lg
+                  rounded-r-lg rounded-l-none
                   hover:bg-gray-600
                   transition
                 "
@@ -27,7 +25,7 @@
             </div>
           </div>
           <div>
-            <h1 class="font-bold text-white">COMPANY</h1>
+            <h1 class="text-lg text-white">COMPANY</h1>
             <ul>
               <li class="hover:text-white transition">
                 <RouterLink to="/">Home</RouterLink>
@@ -50,7 +48,7 @@
             </ul>
           </div>
           <div>
-            <h1 class="font-bold text-white">SOCIAL</h1>
+            <h1 class="text-lg text-white">SOCIAL</h1>
             <ul>
               <li>
                 <a class="hover:text-white transition" href="/">Twitter</a>
