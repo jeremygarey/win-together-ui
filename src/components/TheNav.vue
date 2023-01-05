@@ -11,7 +11,9 @@
       duration-300
       z-50
     "
-    :class="scrollPosition < 10 ? 'bg-transparent text-white' : 'bg-white'"
+    :class="
+      scrollPosition < 10 ? 'bg-transparent text-white' : 'bg-white shadow-md'
+    "
   >
     <ul class="flex items-center px-4 max-w-screen-lg mx-auto">
       <li class="mr-4">
