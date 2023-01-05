@@ -36,6 +36,16 @@ module.exports = {
             transform: "translateX(0px)",
           },
         },
+        slidefromright: {
+          "0%": {
+            opacity: "0%",
+            transform: "translateX(100px)",
+          },
+          "100%": {
+            opacity: "100%",
+            transform: "translateX(0px)",
+          },
+        },
         slidefrombottom: {
           "0%": {
             opacity: "0%",
@@ -50,6 +60,8 @@ module.exports = {
       animation: {
         slidefromleft:
           "slidefromleft 900ms forwards cubic-bezier(.3,.03,.17,.98)",
+        slidefromright:
+          "slidefromright 900ms forwards cubic-bezier(.3,.03,.17,.98)",
         slidefrombottom:
           "slidefrombottom 900ms forwards cubic-bezier(.3,.03,.17,.98)",
       },

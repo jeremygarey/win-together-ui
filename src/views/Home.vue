@@ -67,6 +67,7 @@ export default {
 
     animateOnScroll("animate-on-scroll-slide-l", "animate-slidefromleft");
     animateOnScroll("animate-on-scroll-slide-b", "animate-slidefrombottom");
+    animateOnScroll("animate-on-scroll-slide-r", "animate-slidefromright");
   },
 };
 </script>
