@@ -1,7 +1,16 @@
 
 <template>
   <div
-    class="text-gray-800 fixed top-0 left-0 right-0 transition duration-300"
+    class="
+      text-gray-800
+      fixed
+      top-0
+      left-0
+      right-0
+      transition
+      duration-300
+      z-50
+    "
     :class="scrollPosition < 10 ? 'bg-transparent text-white' : 'bg-white'"
   >
     <ul class="flex items-center px-4 max-w-screen-lg mx-auto">
