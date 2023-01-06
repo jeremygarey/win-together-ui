@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-[20vh] bg-white px-4 py-14 text-gray-800">
-    <div class="max-w-screen-lg mx-auto">
-      <h1 v-if="title" class="text-center">{{ title }}</h1>
+    <div class="container">
+      <h1 v-if="title" class="text-center text-4xl">{{ title }}</h1>
       <div class="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 mt-4 font-light">
         <div class="my-auto animate-on-scroll-slide-l" v-if="textLeft">
-          <slot name="text"></slot>
+          <slot></slot>
         </div>
         <div v-if="imageSource" class="my-auto lg:col-span-2">
           <img
@@ -13,8 +13,8 @@
             alt=""
           />
         </div>
-        <div class="my-auto animate-on-scroll-slide-r">
-          <slot name="text" v-if="!textLeft"></slot>
+        <div v-if="!textLeft" class="my-auto animate-on-scroll-slide-r">
+          <slot></slot>
         </div>
       </div>
       <div class="text-center mt-6">

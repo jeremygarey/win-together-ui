@@ -8,8 +8,7 @@
         <div
           class="
             min-h-screen
-            max-w-screen-lg
-            mx-auto
+            container
             flex flex-col
             justify-center
             items-center
@@ -35,16 +34,18 @@
               Helping communities build cultures of excellence powered by people
               + process.
             </div>
-            <button
-              class="
-                mt-6
-                animate-slidefrombottom
-                animation-delay-1000
-                initial-opacity-0
-              "
-            >
-              Learn More
-            </button>
+            <router-link to="/about">
+              <button
+                class="
+                  mt-6
+                  animate-slidefrombottom
+                  animation-delay-1000
+                  initial-opacity-0
+                "
+              >
+                Learn More
+              </button>
+            </router-link>
           </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +63,7 @@
               mt-auto
               animate-bounce
             "
+            @click="scrollDown()"
           >
             <path
               stroke-linecap="round"
@@ -74,3 +76,18 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    scrollDown() {
+      // document.getElementById("what-we-do").scrollIntoView();
+      const rect = document
+        .querySelector("#what-we-do")
+        .getBoundingClientRect();
+      const navBox = document.querySelector("#the-nav");
+      window.scrollBy(0, rect.top - navBox.offsetHeight);
+    },
+  },
+};
+</script>

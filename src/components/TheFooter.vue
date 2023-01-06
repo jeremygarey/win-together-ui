@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="bg-gray-800 text-gray-400 p-10">
-      <div class="max-w-screen-lg mx-auto">
+      <div class="container">
         <div class="grid grid-cols-4 gap-14">
           <div class="col-span-2">
             <img src="@/assets/logos/logo-wide-light.svg" alt="" />

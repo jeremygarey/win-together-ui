@@ -1,6 +1,7 @@
 
 <template>
   <div
+    id="the-nav"
     class="
       text-gray-800
       fixed
@@ -15,7 +16,7 @@
       scrollPosition < 10 ? 'bg-transparent text-white' : 'bg-white shadow-md'
     "
   >
-    <ul class="flex items-center px-4 max-w-screen-lg mx-auto">
+    <ul class="flex items-center container">
       <li class="mr-4">
         <router-link to="/" active-class="text-green">
           <img
