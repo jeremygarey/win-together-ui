@@ -1,6 +1,8 @@
 <template>
   <div>
-    <partial-hero imageSource="'../../assets/hero-images/table.jpg'" />
+    <partial-hero
+      imageSource="'../../assets/hero-images/table-meeting-3.jpg'"
+    />
     <title-section
       title="About Us"
       subtitle="Win Together® exists to enable performance excellence in local governments."
@@ -15,18 +17,33 @@
         efficiently meeting the needs of the community.
       </p>
     </title-section>
-    <info-section imageSource="../../../public/assets/hero-images/table.jpg">
-      <h1>Driving Excellence Through Collaborative Engagement</h1>
-      <p class="mt-2">
-        We partner with local governments who have the vision and desire to
-        create high achieving, sustainable, and resilient communities. We
-        provide the tools and resources to help make it a reality.
-      </p>
+    <info-section>
+      <template v-slot:image>
+        <img
+          class="rounded-xl"
+          src="@/assets/images/whiteboard-meeting.jpg"
+          alt=""
+        />
+      </template>
+      <template v-slot:text>
+        <h1>Driving Excellence Through Collaborative Engagement</h1>
+        <p class="mt-2">
+          We partner with local governments who have the vision and desire to
+          create high achieving, sustainable, and resilient communities. We
+          provide the tools and resources to help make it a reality.
+        </p>
+      </template>
     </info-section>
-    <image-block imageSource="../../../public/assets/hero-images/table.jpg" />
+    <image-block
+      imageSource="@/../public/assets/hero-images/table-topdown.jpg"
+    />
     <columns-section title="Our Principles">
       <template v-slot:col-1>
-        <img src="@/assets/logos/logo-dark.svg" alt="" />
+        <img
+          class="rounded-xl mt-4"
+          src="@/assets/images/table-meeting.jpg"
+          alt=""
+        />
         <h2 class="mt-4">Building Communities of Communities</h2>
         <p class="mt-2 font-light">
           We believe there is great value in learning from other local
@@ -35,7 +52,11 @@
         </p>
       </template>
       <template v-slot:col-2>
-        <img src="@/assets/logos/logo-dark.svg" alt="" />
+        <img
+          class="rounded-xl mt-4"
+          src="@/assets/images/girls-laughing.jpg"
+          alt=""
+        />
         <h2 class="mt-4">Redefining Community Engagement</h2>
         <p class="mt-2 font-light">
           Citizens are an underutilized resource in most local governments even
@@ -45,7 +66,11 @@
         </p>
       </template>
       <template v-slot:col-3>
-        <img src="@/assets/logos/logo-dark.svg" alt="" />
+        <img
+          class="rounded-xl mt-4"
+          src="@/assets/images/teamwork.jpg"
+          alt=""
+        />
         <h2 class="mt-4">Developing Capabilities in People</h2>
         <p class="mt-2 font-light">
           Consulting engagements often identify problems and solutions already

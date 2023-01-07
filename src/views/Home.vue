@@ -3,26 +3,30 @@
   <info-section
     id="what-we-do"
     title="What We Do"
-    imageSource="../../../public/assets/hero-images/table.jpg"
     buttonText="Learn more"
-    buttonLinkTo="/about"
+    buttonLinkTo="/what-we-do"
   >
-    <p>
-      We help local governments build cultures of continuous improvement to
-      address capacity constraints, economic and operational challenges, and
-      improve quality of life for both employees and residents of the
-      communities they serve.
-    </p>
-    <br />
-    <p>
-      Our team members have decades of experience leading successful,
-      large-scale transformations and building capabilities in people to unleash
-      their full potential. Whether your community has 8 employees or 8,000 - we
-      will equip you with the tools and skills needed to solve problems and
-      transform how work is done.
-    </p>
+    <template v-slot:image>
+      <img class="rounded-xl" src="@/assets/images/teamwork.jpg" alt="" />
+    </template>
+    <template v-slot:text>
+      <p>
+        We help local governments build cultures of continuous improvement to
+        address capacity constraints, economic and operational challenges, and
+        improve quality of life for both employees and residents of the
+        communities they serve.
+      </p>
+      <br />
+      <p>
+        Our team members have decades of experience leading successful,
+        large-scale transformations and building capabilities in people to
+        unleash their full potential. Whether your community has 8 employees or
+        8,000 - we will equip you with the tools and skills needed to solve
+        problems and transform how work is done.
+      </p>
+    </template>
   </info-section>
-  <image-block imageSource="../../../assets/hero-images/table.jpg">
+  <image-block imageSource="../../../assets/hero-images/bw-office.jpg">
     <div>
       People are the only organizational asset with an infinite capacity to
       appreciate in value.
@@ -30,28 +34,32 @@
   </image-block>
   <info-section
     :textLeft="true"
-    imageSource="../../../assets/hero-images/table.jpg"
     buttonText="Join now"
     buttonLinkTo="/gxn"
     title="Government Excellence Network"
   >
-    <p>
-      Win Together® was founded in 2020 with a single mission: to enable
-      performance excellence in local governments. Working together to solve
-      problems, residents and their local governments can achieve outstanding
-      results that sustain over time, effectively and efficiently meeting the
-      needs of the community.
-      <span class="font-semibold">Government Excellence Network (GXN)</span>, a
-      division of Win Together®, provides a framework to build the capabilities
-      needed to drive performance excellence.
-      <span class="font-semibold"
-        >Join now for updates about our launch in Fall 2022. GXN will provide
-        learning opportunities, and a venue to exchange ideas with others in our
-        knowledge sharing community.</span
-      >
-    </p>
+    <template v-slot:image>
+      <img class="rounded-xl" src="@/assets/images/laptop-hands.jpg" alt="" />
+    </template>
+    <template v-slot:text>
+      <p>
+        Win Together® was founded in 2020 with a single mission: to enable
+        performance excellence in local governments. Working together to solve
+        problems, residents and their local governments can achieve outstanding
+        results that sustain over time, effectively and efficiently meeting the
+        needs of the community.
+        <span class="font-semibold">Government Excellence Network (GXN)</span>,
+        a division of Win Together®, provides a framework to build the
+        capabilities needed to drive performance excellence.
+        <span class="font-semibold"
+          >Join now for updates about our launch in Fall 2022. GXN will provide
+          learning opportunities, and a venue to exchange ideas with others in
+          our knowledge sharing community.</span
+        >
+      </p>
+    </template>
   </info-section>
-  <image-block imageSource="../../../assets/hero-images/table.jpg">
+  <image-block imageSource="../../../assets/hero-images/table-meeting.jpg">
     <div>
       <span class="font-semibold">Coming early 2023:</span> Government
       Excellence Network (GXN) provides a robust eLearning platform for the

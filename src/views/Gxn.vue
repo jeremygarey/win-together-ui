@@ -1,5 +1,5 @@
 <template>
-  <partial-hero imageSource="../../assets/hero-images/table.jpg" />
+  <partial-hero imageSource="../../assets/hero-images/government.jpg" />
   <title-section
     title="Government Excellence Network"
     subtitle="Coming December 2022"
@@ -36,10 +36,18 @@
 <script>
 import PartialHero from "@/components/PartialHero.vue";
 import TitleSection from "@/components/TitleSection.vue";
+import { setInitialOpacities, animateOnScroll } from "@/animations.js";
+
 export default {
   components: {
     PartialHero,
     TitleSection,
+  },
+  mounted() {
+    setInitialOpacities();
+    animateOnScroll("animate-on-scroll-slide-l", "animate-slidefromleft");
+    animateOnScroll("animate-on-scroll-slide-b", "animate-slidefrombottom");
+    animateOnScroll("animate-on-scroll-slide-r", "animate-slidefromright");
   },
 };
 </script>

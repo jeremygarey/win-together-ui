@@ -1,7 +1,7 @@
 <template>
   <div>
     <partial-hero
-      imageSource="@/../public/assets/hero-images/table.jpg"
+      imageSource="@/../public/assets/hero-images/bw-office.jpg"
     ></partial-hero>
     <title-section
       title="Reflections"
@@ -21,11 +21,19 @@
 import PartialHero from "@/components/PartialHero.vue";
 import TitleSection from "@/components/TitleSection.vue";
 import BlogThumbnails from "@/components/BlogThumbnails.vue";
+import { setInitialOpacities, animateOnScroll } from "@/animations.js";
+
 export default {
   components: {
     PartialHero,
     TitleSection,
     BlogThumbnails,
+  },
+  mounted() {
+    setInitialOpacities();
+    animateOnScroll("animate-on-scroll-slide-l", "animate-slidefromleft");
+    animateOnScroll("animate-on-scroll-slide-b", "animate-slidefrombottom");
+    animateOnScroll("animate-on-scroll-slide-r", "animate-slidefromright");
   },
 };
 </script>

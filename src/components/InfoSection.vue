@@ -4,17 +4,22 @@
       <h1 v-if="title" class="text-center text-4xl">{{ title }}</h1>
       <div class="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 mt-4 font-light">
         <div class="my-auto animate-on-scroll-slide-l" v-if="textLeft">
-          <slot></slot>
+          <slot name="text"></slot>
         </div>
-        <div v-if="imageSource" class="my-auto lg:col-span-2">
-          <img
-            class="rounded-lg animate-on-scroll-slide-b"
-            :src="imageSource"
+        <div class="my-auto lg:col-span-2">
+          <!-- <img
+            class="rounded-lg"
+            :class="
+              textLeft
+                ? 'animate-on-scroll-slide-r'
+                : 'animate-on-scroll-slide-l'
+            "
             alt=""
-          />
+          /> -->
+          <slot name="image"></slot>
         </div>
         <div v-if="!textLeft" class="my-auto animate-on-scroll-slide-r">
-          <slot></slot>
+          <slot name="text"></slot>
         </div>
       </div>
       <div class="text-center mt-6">
@@ -38,6 +43,11 @@ export default {
     buttonText: String,
     buttonLinkTo: String,
     imageSource: String,
+  },
+  computed: {
+    imageUrl() {
+      return `@/assets/images/${this.imageSource}`;
+    },
   },
 };
 </script>

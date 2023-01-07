@@ -28,19 +28,19 @@
                 mt-6
                 animate-on-scroll-slide-l
                 animation-delay-500
-                initial-opacitity-0
+                opacity-0
               "
             >
               Helping communities build cultures of excellence powered by people
               + process.
             </div>
-            <router-link to="/about">
+            <router-link to="/what-we-do">
               <button
                 class="
                   mt-6
                   animate-slidefrombottom
                   animation-delay-1000
-                  initial-opacity-0
+                  opacity-0
                 "
               >
                 Learn More

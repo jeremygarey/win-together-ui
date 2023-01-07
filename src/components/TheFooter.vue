@@ -61,5 +61,10 @@
         </div>
       </div>
     </div>
+    <div class="bg-gray-900 text-gray-400 p-6">
+      <div class="container">
+        Copyright 2023 Win Together®. All Rights Reserved.
+      </div>
+    </div>
   </footer>
 </template>

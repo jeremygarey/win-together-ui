@@ -17,8 +17,8 @@
     "
   >
     <ul class="flex items-center container">
-      <li class="mr-4">
-        <router-link to="/" active-class="text-green">
+      <li>
+        <router-link to="/">
           <img
             v-if="scrollPosition >= 10"
             class="hover:scale-105 w-14 transition duration-300"
@@ -31,7 +31,7 @@
           />
         </router-link>
       </li>
-      <li class="mr-4 ml-auto">
+      <li class="mr-2 lg:mr-4 ml-auto hover:text-green transition">
         <router-link
           to="/what-we-do"
           class="inline-block py-6 px-2 shadow-top-transparent"
@@ -39,7 +39,7 @@
           >What We Do</router-link
         >
       </li>
-      <li class="mr-4">
+      <li class="mr-2 lg:mr-4 hover:text-green transition">
         <router-link
           to="/who-we-are"
           class="inline-block py-6 px-2 shadow-top-transparent"
@@ -47,7 +47,7 @@
           >Who We Are</router-link
         >
       </li>
-      <li class="mr-4">
+      <li class="mr-2 lg:mr-4 hover:text-green transition">
         <router-link
           to="/gxn"
           class="inline-block py-6 px-2 shadow-top-transparent"
@@ -55,7 +55,7 @@
           >Government Excellence Network</router-link
         >
       </li>
-      <li class="mr-4">
+      <li class="mr-2 lg:mr-4 hover:text-green transition">
         <router-link
           to="/blog"
           class="inline-block py-6 px-2 shadow-top-transparent"
@@ -63,7 +63,7 @@
           >Blog</router-link
         >
       </li>
-      <li class="mr-4">
+      <li class="mr-2 lg:mr-4 hover:text-green transition">
         <router-link
           to="/contact"
           class="inline-block py-6 px-2 shadow-top-transparent"
