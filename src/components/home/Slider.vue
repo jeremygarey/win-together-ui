@@ -81,21 +81,21 @@ export default {
       slides: [
         {
           quote: "Mirus is cool!",
-          imageSource: "../../../public/assets/hero-images/table.jpg",
+          imageSource: "https://picsum.photos/200/200",
           name: "Jeremy Garey",
           description: "Front-end Developer",
         },
         {
-          // quote: "My boyfriend is so hot <3",
-          quote: "I'm in Israel!",
-          imageSource: "../../../public/assets/hero-images/table.jpg",
+          quote: "My boyfriend is so hot <3",
+          // quote: "I'm in Israel!",
+          imageSource: "https://picsum.photos/id/100/200/200",
           name: "Annabella Eckert",
           description: "Israel explorer",
         },
         {
           quote:
             "Don't mistake activity for achievement. To produce results, tasks must be well organized and properly executed; otherwise, it is no different from children running around on the playground - everybody is doing something, but nothing is being done; lots of activity, no achievement.",
-          imageSource: "../../../public/assets/hero-images/table.jpg",
+          imageSource: "https://picsum.photos/id/101/200/200",
           name: "John Wooden",
           description: "Coach Wooden's Leadership Game Plan for Success",
         },

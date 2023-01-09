@@ -7,7 +7,11 @@
     buttonLinkTo="/what-we-do"
   >
     <template v-slot:image>
-      <img class="rounded-xl" src="@/assets/images/teamwork.jpg" alt="" />
+      <img
+        class="rounded-xl animate-on-scroll-slide-l"
+        src="@/assets/images/teamwork.jpg"
+        alt=""
+      />
     </template>
     <template v-slot:text>
       <p>
@@ -39,7 +43,11 @@
     title="Government Excellence Network"
   >
     <template v-slot:image>
-      <img class="rounded-xl" src="@/assets/images/laptop-hands.jpg" alt="" />
+      <img
+        class="rounded-xl animate-on-scroll-slide-r"
+        src="@/assets/images/laptop-hands.jpg"
+        alt=""
+      />
     </template>
     <template v-slot:text>
       <p>

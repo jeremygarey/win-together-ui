@@ -35,7 +35,7 @@
       </template>
     </info-section>
     <image-block
-      imageSource="@/../public/assets/hero-images/table-topdown.jpg"
+      imageSource="../../../public/assets/hero-images/table-topdown.jpg"
     />
     <columns-section title="Our Principles">
       <template v-slot:col-1>
