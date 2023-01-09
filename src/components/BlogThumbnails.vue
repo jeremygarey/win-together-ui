@@ -2,38 +2,44 @@
   <div class="min-h-[20vh] bg-white px-4 py-14 text-gray-800">
     <div class="container">
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
-        <div v-for="(blog, id) in blogPosts" :key="id">
-          <div
-            class="
-              drop-shadow-lg
-              rounded-2xl
-              hover:scale-105
-              transition
-              text-white
-              bg-cover bg-center
-            "
-            :style="`background-image: url(${blog.thumbnailImage})`"
-          >
+        <router-link
+          v-for="(blog, id) in blogPosts"
+          :key="id"
+          :to="`/blog/${id}`"
+        >
+          <div>
             <div
               class="
-                text-xl
-                bg-black/40
-                h-60
-                p-4
+                drop-shadow-lg
                 rounded-2xl
-                flex flex-col
-                justify-between
+                hover:scale-105
+                transition
+                text-white
+                bg-cover bg-center
               "
+              :style="`background-image: url(${blog.thumbnailImage})`"
             >
-              <div class="font-bold">
-                {{ blog.title }}
-              </div>
-              <div>
-                {{ blog.date }}
+              <div
+                class="
+                  text-xl
+                  bg-black/40
+                  h-60
+                  p-4
+                  rounded-2xl
+                  flex flex-col
+                  justify-between
+                "
+              >
+                <div class="font-bold">
+                  {{ blog.title }}
+                </div>
+                <div>
+                  {{ blog.date }}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>

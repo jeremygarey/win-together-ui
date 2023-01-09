@@ -12,22 +12,20 @@
       duration-300
       z-50
     "
-    :class="
-      scrollPosition < 10 ? 'bg-transparent text-white' : 'bg-white shadow-md'
-    "
+    :class="transparentNav ? 'bg-transparent text-white' : 'bg-white shadow-md'"
   >
     <ul class="flex items-center container">
       <li>
         <router-link to="/">
           <img
-            v-if="scrollPosition >= 10"
+            v-if="transparentNav"
             class="hover:scale-105 w-14 transition duration-300"
-            src="@/assets/logos/logo-dark.svg"
+            src="@/assets/logos/logo-light.svg"
           />
           <img
             v-else
             class="hover:scale-105 w-14 transition duration-300"
-            src="@/assets/logos/logo-light.svg"
+            src="@/assets/logos/logo-dark.svg"
           />
         </router-link>
       </li>
@@ -81,6 +79,13 @@ export default {
     return {
       scrollPosition: 0,
     };
+  },
+  computed: {
+    transparentNav() {
+      return (
+        this.scrollPosition < 10 && !this.$route.path.includes("/who-we-are/")
+      );
+    },
   },
   methods: {
     updateScoll() {

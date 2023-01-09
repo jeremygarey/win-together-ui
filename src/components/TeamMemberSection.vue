@@ -3,9 +3,10 @@
     <div class="container">
       <h1 v-if="title" class="text-center text-4xl">{{ title }}</h1>
       <team-member-preview
-        v-for="(tm, index) in teamMembers"
-        :key="index"
+        v-for="(tm, id) in teamMembers"
+        :key="`team-member-${id}`"
         :tm="tm"
+        :id="id"
       />
     </div>
   </div>
@@ -22,8 +23,8 @@ export default {
   },
   data() {
     return {
-      teamMembers: [
-        {
+      teamMembers: {
+        0: {
           name: "Sheila Montney",
           title: "Managing Partner",
           email: "sheilamontney@wintogetherllc.com",
@@ -31,8 +32,9 @@ export default {
             "Sheila founded Win Together with the goal of improving city viability by leveraging the capabilities of its people.",
           longBio:
             "Sheila founded Win Together with the goal of improving city viability by leveraging the capabilities of its people and the application of operational excellence principles. Sheila brings a wealth of experience from her 35-year career in the private sector where she led transformational work in operations, technology, and enabling functions for State Farm’s financial services product lines.",
+          profileImage: "https://picsum.photos/300/200",
         },
-        {
+        1: {
           name: "Sheila Montney",
           title: "Managing Partner",
           email: "sheilamontney@wintogetherllc.com",
@@ -40,8 +42,9 @@ export default {
             "Sheila founded Win Together with the goal of improving city viability by leveraging the capabilities of its people.",
           longBio:
             "Sheila founded Win Together with the goal of improving city viability by leveraging the capabilities of its people and the application of operational excellence principles. Sheila brings a wealth of experience from her 35-year career in the private sector where she led transformational work in operations, technology, and enabling functions for State Farm’s financial services product lines.",
+          profileImage: "https://picsum.photos/300/200",
         },
-      ],
+      },
     };
   },
 };
