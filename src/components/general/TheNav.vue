@@ -70,10 +70,20 @@
           class="p-2 bg-white top-0 absolute mt-14 w-full shadow-md z-40"
           v-if="navOpen"
         >
+          <li class="hover:text-green transition py-2">
+            <router-link
+              to="/"
+              class="inline-block px-2 text-gt"
+              active-class="text-green transition"
+              @click="toggleNav"
+              >Home</router-link
+            >
+          </li>
+
           <li
             v-for="(route, index) in routes"
             :key="`mobile-nav-item-${index}`"
-            class="hover:text-green transition"
+            class="hover:text-green transition py-2"
           >
             <router-link
               :to="route.route"
@@ -140,7 +150,7 @@ export default {
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-180px);
+  opacity: 50%;
+  transform: translateY(-300px);
 }
 </style>
