@@ -3,12 +3,11 @@
     class="
       flex flex-col
       justify-center
-      min-h-screen
       md:min-h-[20vh]
+      py-14
       justify-center
       bg-white
       px-4
-      py-14
       text-gray-800
     "
   >
@@ -18,7 +17,12 @@
         class="flex justify-around items-center max-w-screen-lg mx-auto md:px-4"
       >
         <button
-          class="bg-transparent hover:bg-transparent hover:scale-110"
+          class="
+            bg-transparent
+            hover:bg-transparent hover:scale-110
+            hidden
+            md:block
+          "
           @click="prev()"
         >
           <svg
@@ -37,28 +41,26 @@
           </svg>
         </button>
 
-        <div
-          class="
-            relative
-            overflow-hidden
-            w-10/12
-            min-h-[40vh]
-            flex
-            items-center
-          "
-        >
-          <slider-item
-            v-for="(slide, index) in slides"
-            :key="`item-${index}`"
-            :slide="slide"
-            :current-slide="currentSlide"
-            :index="index"
-            :direction="direction"
-          />
+        <div class="relative overflow-hidden w-10/12 flex items-center">
+          <div class="h-[34rem] w-full">
+            <slider-item
+              v-for="(slide, index) in slides"
+              :key="`item-${index}`"
+              :slide="slide"
+              :current-slide="currentSlide"
+              :index="index"
+              :direction="direction"
+            />
+          </div>
         </div>
 
         <button
-          class="bg-transparent hover:bg-transparent hover:scale-110"
+          class="
+            bg-transparent
+            hover:bg-transparent hover:scale-110
+            hidden
+            md:block
+          "
           @click="next()"
         >
           <svg

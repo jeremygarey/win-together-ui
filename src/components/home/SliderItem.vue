@@ -1,7 +1,10 @@
 <template>
   <!-- <transition :name="transitionEffect"> -->
   <transition name="fade">
-    <div class="text-center w-full" v-show="currentSlide === index">
+    <div
+      class="text-center w-full h-[34rem] flex flex-col justify-center"
+      v-show="currentSlide === index"
+    >
       <p class="text-xl font-light">"{{ slide.quote }}"</p>
       <img
         class="rounded-full w-32 h-32 mx-auto mt-4"
@@ -9,7 +12,7 @@
         alt=""
       />
       <div class="mt-4 font-semibold">{{ slide.name }}</div>
-      <div class="">{{ slide.description }}</div>
+      <div class="text-sm">{{ slide.description }}</div>
     </div>
   </transition>
 </template>
