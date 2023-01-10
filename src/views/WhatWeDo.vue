@@ -45,46 +45,53 @@
     </image-block>
     <columns-section title="Our Principles">
       <template v-slot:col-1>
-        <img
-          class="rounded-xl mt-4"
-          src="@/assets/images/table-meeting.jpg"
-          alt=""
-        />
-        <h2 class="mt-4">Building Communities of Communities</h2>
-        <p class="mt-2 font-light">
-          We believe there is great value in learning from other local
-          governments near and far, many of which face similar issues but have
-          not historically had an easy way to share and learn from each other.
-        </p>
+        <div class="animate-on-scroll-slide-r opacity-0">
+          <img
+            class="rounded-xl mt-4"
+            src="@/assets/images/table-meeting.jpg"
+            alt=""
+          />
+          <h2 class="mt-4">Building Communities of Communities</h2>
+          <p class="mt-2 font-light">
+            We believe there is great value in learning from other local
+            governments near and far, many of which face similar issues but have
+            not historically had an easy way to share and learn from each other.
+          </p>
+        </div>
       </template>
       <template v-slot:col-2>
-        <img
-          class="rounded-xl mt-4"
-          src="@/assets/images/girls-laughing.jpg"
-          alt=""
-        />
-        <h2 class="mt-4">Redefining Community Engagement</h2>
-        <p class="mt-2 font-light">
-          Citizens are an underutilized resource in most local governments even
-          though they have a shared investment in the community. Smart
-          engagement helps alleviate local government resource constraints and
-          builds buy-in from residents.
-        </p>
+        <div class="animate-on-scroll-slide-r animation-delay-200 opacity-0">
+          <img
+            class="rounded-xl mt-4"
+            src="@/assets/images/girls-laughing.jpg"
+            alt=""
+          />
+          <h2 class="mt-4">Redefining Community Engagement</h2>
+          <p class="mt-2 font-light">
+            Citizens are an underutilized resource in most local governments
+            even though they have a shared investment in the community. Smart
+            engagement helps alleviate local government resource constraints and
+            builds buy-in from residents.
+          </p>
+        </div>
       </template>
       <template v-slot:col-3>
-        <img
-          class="rounded-xl mt-4"
-          src="@/assets/images/teamwork.jpg"
-          alt=""
-        />
-        <h2 class="mt-4">Developing Capabilities in People</h2>
-        <p class="mt-2 font-light">
-          Consulting engagements often identify problems and solutions already
-          known by the client, and the work stops there. We measure our success
-          on outcomes and are motivated to not only provide solutions but also
-          build cultures of continuous improvement through intentional knowledge
-          transfer of methods that can be used in the future.
-        </p>
+        <div class="animate-on-scroll-slide-r animation-delay-400 opacity-0">
+          <img
+            class="rounded-xl mt-4"
+            src="@/assets/images/teamwork.jpg"
+            alt=""
+          />
+          <h2 class="mt-4">Developing Capabilities in People</h2>
+          <p class="mt-2 font-light">
+            Consulting engagements often identify problems and solutions already
+            known by the client, and the work stops there. We measure our
+            success on outcomes and are motivated to not only provide solutions
+            but also build cultures of continuous improvement through
+            intentional knowledge transfer of methods that can be used in the
+            future.
+          </p>
+        </div>
       </template>
     </columns-section>
   </div>

@@ -86,8 +86,8 @@ export default {
           description: "Front-end Developer",
         },
         {
-          quote: "My boyfriend is so hot <3",
-          // quote: "I'm in Israel!",
+          // quote: "My boyfriend is so hot <3",
+          quote: "I'm in Israel!",
           imageSource: "https://picsum.photos/id/100/200/200",
           name: "Annabella Eckert",
           description: "Israel explorer",
