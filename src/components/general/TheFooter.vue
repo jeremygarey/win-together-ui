@@ -2,14 +2,14 @@
   <footer>
     <div class="bg-gray-800 text-gray-400 p-10">
       <div class="container">
-        <div class="grid grid-cols-4 gap-14">
+        <div class="md:grid grid-cols-4 gap-14">
           <div class="col-span-2">
             <img src="@/assets/logos/logo-wide-light.svg" alt="" />
             <p>Sign up for our newsletter and future updates</p>
-            <div class="flex mt-4">
+            <div class="flex mt-4 w-full">
               <input
                 type="text"
-                class="rounded-l-lg text-gray-800 px-3 outline-none"
+                class="rounded-l-lg text-gray-800 px-3 outline-none w-8/12"
               />
               <button
                 class="
@@ -18,6 +18,7 @@
                   rounded-r-lg rounded-l-none
                   hover:bg-gray-600
                   transition
+                  w-4/12
                 "
               >
                 Subscribe
@@ -25,7 +26,7 @@
             </div>
           </div>
           <div>
-            <h1 class="text-lg text-white">COMPANY</h1>
+            <h1 class="mt-4 md:mt-0 text-lg text-white">COMPANY</h1>
             <ul>
               <li class="hover:text-white transition">
                 <RouterLink to="/">Home</RouterLink>
@@ -48,7 +49,7 @@
             </ul>
           </div>
           <div>
-            <h1 class="text-lg text-white">SOCIAL</h1>
+            <h1 class="mt-4 md:mt-0 text-lg text-white">SOCIAL</h1>
             <ul>
               <li>
                 <a class="hover:text-white transition" href="/">Twitter</a>

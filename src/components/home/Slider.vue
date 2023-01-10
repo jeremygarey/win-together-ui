@@ -1,66 +1,89 @@
 <template>
-  <div class="min-h-[20vh] bg-white px-4 py-14 text-gray-800">
-    <h1 v-if="title" class="text-center text-4xl">{{ title }}</h1>
-    <div class="flex justify-around items-center max-w-screen-md mx-auto px-4">
-      <button
-        class="bg-transparent hover:bg-transparent hover:scale-110"
-        @click="prev()"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-12 h-12 text-gray-400"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.75 19.5L8.25 12l7.5-7.5"
-          />
-        </svg>
-      </button>
-
+  <div
+    class="
+      flex flex-col
+      justify-center
+      min-h-screen
+      md:min-h-[20vh]
+      justify-center
+      bg-white
+      px-4
+      py-14
+      text-gray-800
+    "
+  >
+    <div>
+      <h1 v-if="title" class="text-center md:text-4xl">{{ title }}</h1>
       <div
-        class="relative overflow-hidden w-9/12 min-h-[40vh] flex items-center"
+        class="flex justify-around items-center max-w-screen-lg mx-auto md:px-4"
       >
-        <slider-item
-          v-for="(slide, index) in slides"
-          :key="`item-${index}`"
-          :slide="slide"
-          :current-slide="currentSlide"
-          :index="index"
-          :direction="direction"
+        <button
+          class="bg-transparent hover:bg-transparent hover:scale-110"
+          @click="prev()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-12 h-12 text-gray-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
+
+        <div
+          class="
+            relative
+            overflow-hidden
+            w-10/12
+            min-h-[40vh]
+            flex
+            items-center
+          "
+        >
+          <slider-item
+            v-for="(slide, index) in slides"
+            :key="`item-${index}`"
+            :slide="slide"
+            :current-slide="currentSlide"
+            :index="index"
+            :direction="direction"
+          />
+        </div>
+
+        <button
+          class="bg-transparent hover:bg-transparent hover:scale-110"
+          @click="next()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-12 h-12 text-gray-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="flex justify-center">
+        <slider-indicators
+          :total="slides.length"
+          :currentIndex="currentSlide"
+          @switch="switchSlide($event)"
         />
       </div>
-
-      <button
-        class="bg-transparent hover:bg-transparent hover:scale-110"
-        @click="next()"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-12 h-12 text-gray-400"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M8.25 4.5l7.5 7.5-7.5 7.5"
-          />
-        </svg>
-      </button>
-    </div>
-    <div class="flex justify-center">
-      <slider-indicators
-        :total="slides.length"
-        :currentIndex="currentSlide"
-        @switch="switchSlide($event)"
-      />
     </div>
   </div>
 </template>
@@ -98,6 +121,20 @@ export default {
           imageSource: "https://picsum.photos/id/101/200/200",
           name: "John Wooden",
           description: "Coach Wooden's Leadership Game Plan for Success",
+        },
+        {
+          quote:
+            "There is nothing so useless as efficiently doing that which should not be done at all.",
+          imageSource: "https://picsum.photos/id/101/200/200",
+          name: "Peter Drucker",
+          description: "Author, Teacher, Consultant",
+        },
+        {
+          quote:
+            "There are four goals of improvement: easier, better, faster, and cheaper. These four goals appear in the order of priority",
+          imageSource: "https://picsum.photos/id/101/200/200",
+          name: "Shigeo Shingo",
+          description: "Thought leader in continuous improvement",
         },
       ],
       currentSlide: 0,

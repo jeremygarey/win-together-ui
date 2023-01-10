@@ -18,15 +18,6 @@
           <slot name="text"></slot>
         </div>
         <div class="my-auto lg:col-span-2">
-          <!-- <img
-            class="rounded-lg"
-            :class="
-              textLeft
-                ? 'animate-on-scroll-slide-r'
-                : 'animate-on-scroll-slide-l'
-            "
-            alt=""
-          /> -->
           <slot name="image"></slot>
         </div>
         <div v-if="!textLeft" class="my-auto animate-on-scroll-slide-r">

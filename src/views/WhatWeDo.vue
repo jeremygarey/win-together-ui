@@ -60,7 +60,7 @@
         </div>
       </template>
       <template v-slot:col-2>
-        <div class="animate-on-scroll-slide-r animation-delay-200 opacity-0">
+        <div class="animate-on-scroll-slide-r md:animation-delay-200 opacity-0">
           <img
             class="rounded-xl mt-4"
             src="@/assets/images/girls-laughing.jpg"
@@ -76,7 +76,7 @@
         </div>
       </template>
       <template v-slot:col-3>
-        <div class="animate-on-scroll-slide-r animation-delay-400 opacity-0">
+        <div class="animate-on-scroll-slide-r md:animation-delay-400 opacity-0">
           <img
             class="rounded-xl mt-4"
             src="@/assets/images/teamwork.jpg"

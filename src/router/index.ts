@@ -46,9 +46,9 @@ const router = createRouter({
     },
     { path: "/:pathMatch(.*)*", name: "not-found", component: PageNotFound },
   ],
-  // scrollBehavior(to, from, savedPosition) {
-  //   return { top: 0 };
-  // },
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  },
 });
 
 export default router;

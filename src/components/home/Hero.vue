@@ -15,17 +15,22 @@
             py-10
           "
         >
-          <div class="text-white text-center w-9/12 mt-auto">
+          <div class="text-white text-center md:w-10/12 mt-auto">
             <img
               src="@/assets/logos/logo-wide-light.svg"
               alt=""
-              class="mx-auto animate-on-scroll-slide-l"
+              class="mx-auto animate-on-scroll-slide-l hidden md:block"
+            />
+            <img
+              src="@/assets/logos/logo-layered-light.svg"
+              alt=""
+              class="mx-auto animate-on-scroll-slide-l md:hidden"
             />
             <div
               class="
                 text-3xl
                 font-semibold
-                mt-6
+                md:mt-6
                 animate-on-scroll-slide-l
                 animation-delay-500
                 opacity-0
