@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import PartialHero from "@/components/PartialHero.vue";
-import TitleSection from "@/components/TitleSection.vue";
+import PartialHero from "@/components/general/PartialHero.vue";
+import TitleSection from "@/components/general/TitleSection.vue";
 import { setInitialOpacities, animateOnScroll } from "@/animations.js";
 
 export default {

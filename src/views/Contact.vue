@@ -14,9 +14,6 @@
           items-center
         "
       >
-        <!-- <div class="bg-gray-800 w-full">
-          <div class="container"></div>
-        </div> -->
         <title-section
           class="w-full"
           title="contact"
@@ -83,7 +80,7 @@
 </template>
 
 <script>
-import TitleSection from "@/components/TitleSection.vue";
+import TitleSection from "@/components/general/TitleSection.vue";
 export default {
   components: {
     TitleSection,

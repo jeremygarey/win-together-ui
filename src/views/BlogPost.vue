@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import ImageBlock from "@/components/ImageBlock.vue";
-import BlogBanner from "@/components/BlogBanner.vue";
-import BlogContent from "@/components/BlogContent.vue";
+import ImageBlock from "@/components/general/ImageBlock.vue";
+import BlogBanner from "@/components/blog/BlogBanner.vue";
+import BlogContent from "@/components/blog/BlogContent.vue";
 export default {
   components: {
     ImageBlock,

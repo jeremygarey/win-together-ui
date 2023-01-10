@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import TeamMemberPreview from "@/components/TeamMemberPreview.vue";
+import TeamMemberPreview from "@/components/who-we-are/TeamMemberPreview.vue";
 export default {
   components: {
     TeamMemberPreview,

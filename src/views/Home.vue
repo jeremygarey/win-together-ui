@@ -38,7 +38,7 @@
       </div>
     </template>
     <template v-slot:image>
-      <scroll-parallax class="-z-50 absolute" speed="0.2">
+      <scroll-parallax class="-z-50 absolute" :speed="0.2">
         <div
           class="w-100 bg-cover mt-[-600px] w-screen h-[60vh]"
           :style="`background-image: url(/public/assets/hero-images/bw-office.jpg)`"
@@ -89,7 +89,7 @@
       </div>
     </template>
     <template v-slot:image>
-      <scroll-parallax class="-z-50 absolute" speed="0.2">
+      <scroll-parallax class="-z-50 absolute" :speed="0.2">
         <div
           class="w-100 bg-cover mt-[-800px] w-screen h-[60vh]"
           :style="`background-image: url(/public/assets/hero-images/table-meeting.jpg)`"
@@ -104,8 +104,8 @@
 
 <script>
 import Hero from "@/components/home/Hero.vue";
-import InfoSection from "@/components/InfoSection.vue";
-import ImageBlock from "@/components/ImageBlock.vue";
+import InfoSection from "@/components/general/InfoSection.vue";
+import ImageBlock from "@/components/general/ImageBlock.vue";
 import Slider from "@/components/home/Slider.vue";
 import SocialsBlock from "@/components/home/SocialsBlock.vue";
 import { setInitialOpacities, animateOnScroll } from "@/animations";

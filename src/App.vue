@@ -1,6 +1,6 @@
 <script setup>
-import TheNav from "./components/TheNav.vue";
-import TheFooter from "./components/TheFooter.vue";
+import TheNav from "@/components/general/TheNav.vue";
+import TheFooter from "@/components/general/TheFooter.vue";
 </script>
 
 <template>
@@ -8,7 +8,9 @@ import TheFooter from "./components/TheFooter.vue";
     <TheNav />
   </header>
 
-  <RouterView class="mx-auto text-gray-800" />
+  <div class="mx-auto text-gray-800">
+    <RouterView />
+  </div>
 
   <TheFooter />
 </template>

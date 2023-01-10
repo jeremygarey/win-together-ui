@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TeamMemberBanner from "@/components/TeamMemberBanner.vue";
+import TeamMemberBanner from "@/components/who-we-are/TeamMemberBanner.vue";
 export default {
   components: {
     TeamMemberBanner,

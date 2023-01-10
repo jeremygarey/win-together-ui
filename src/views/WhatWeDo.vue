@@ -34,7 +34,7 @@
     </info-section>
     <image-block>
       <template v-slot:image>
-        <scroll-parallax class="-z-50 absolute" speed="0.2">
+        <scroll-parallax class="-z-50 absolute" :speed="0.2">
           <div
             class="w-100 bg-cover mt-[-400px] w-screen h-[60vh]"
             :style="`background-image: url(/public/assets/hero-images/table-topdown.jpg)`"
@@ -91,11 +91,11 @@
 </template>
 
 <script>
-import PartialHero from "@/components/PartialHero.vue";
-import TitleSection from "@/components/TitleSection.vue";
-import InfoSection from "@/components/InfoSection.vue";
-import ImageBlock from "@/components/ImageBlock.vue";
-import ColumnsSection from "@/components/ColumnsSection.vue";
+import PartialHero from "@/components/general/PartialHero.vue";
+import TitleSection from "@/components/general/TitleSection.vue";
+import InfoSection from "@/components/general/InfoSection.vue";
+import ImageBlock from "@/components/general/ImageBlock.vue";
+import ColumnsSection from "@/components/general/ColumnsSection.vue";
 import { setInitialOpacities, animateOnScroll } from "@/animations.js";
 import ScrollParallax from "vue3-parallax/src/components/ScrollParallax.vue";
 

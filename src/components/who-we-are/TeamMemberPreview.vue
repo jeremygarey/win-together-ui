@@ -20,7 +20,7 @@
 export default {
   props: {
     tm: Object,
-    id: Number,
+    id: String,
   },
 };
 </script>
