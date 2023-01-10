@@ -1,13 +1,15 @@
 <template>
   <router-link :to="`/who-we-are/${id}`">
-    <div class="grid grid-cols-2 gap-4 mb-8 max-w-screen-md mx-auto">
+    <div
+      class="md:grid grid-cols-2 gap-4 mb-12 md:mb-8 max-w-screen-md mx-auto"
+    >
       <img
         class="rounded-lg w-full hover:scale-105 transition"
         :src="tm.profileImage"
         alt=""
       />
       <div class="my-auto">
-        <h1>{{ tm.name }}</h1>
+        <h1 class="mt-4 md:mt-0">{{ tm.name }}</h1>
         <div class="font-semibold">{{ tm.title }}</div>
         <div class="font-light">{{ tm.shortBio }}</div>
         <div class="font-semibold">{{ tm.email }}</div>

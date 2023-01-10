@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-[40-vh] bg-white pt-64">
-    <div class="bg-green text-gray-800 h-52">
-      <div class="container grid grid-cols-2 p-4 gap-4 -translate-y-32">
+    <div class="bg-green text-gray-800 h-80 md:h-52">
+      <div class="container md:grid grid-cols-2 p-4 gap-4 -translate-y-32">
         <div
           class="
             rounded-lg
@@ -14,7 +14,7 @@
           :style="`background-image: url(${tm.profileImage})`"
         ></div>
         <div class="flex flex-col justify-end">
-          <h1 class="font-black text-4xl animate-slidefromright">
+          <h1 class="font-black text-4xl animate-slidefromright mt-6 md:mt-0">
             {{ tm.name }}
           </h1>
           <div

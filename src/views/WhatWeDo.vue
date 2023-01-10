@@ -36,7 +36,7 @@
       <template v-slot:image>
         <scroll-parallax class="-z-50 absolute" :speed="0.2">
           <div
-            class="w-100 bg-cover mt-[-400px] w-screen h-[60vh]"
+            class="w-100 bg-cover mt-[-400px] w-screen h-[40rem]"
             :style="`background-image: url(/assets/hero-images/table-topdown.jpg)`"
             alt=""
           ></div>

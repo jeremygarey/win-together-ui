@@ -8,8 +8,10 @@
       shadow-black
     "
   >
-    <div class="pb-2 container -translate-y-8">
-      <h1 class="text-6xl font-black animate-on-scroll-slide-l">{{ title }}</h1>
+    <div class="pb-2 container -translate-y-6 md:-translate-y-8">
+      <h1 class="text-5xl md:text-6xl font-black animate-on-scroll-slide-l">
+        {{ title }}
+      </h1>
       <h2 class="mt-4">{{ subtitle }}</h2>
       <div class="mt-4">
         <slot></slot>

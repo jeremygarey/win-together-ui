@@ -6,7 +6,11 @@
   ></title-section>
   <div class="min-h-[20vh] bg-white px-4 py-14 text-gray-800">
     <div class="container">
-      <img class="max-w-lg mx-auto" src="@/assets/logos/gxn-logo.png" alt="" />
+      <img
+        class="max-w-lg mx-auto w-full"
+        src="@/assets/logos/gxn-logo.png"
+        alt=""
+      />
       <p class="mt-12 text-center">
         Working in the public sector is rewarding and noble work. It can also be
         frustrating and exhausting. Constant pressure to do more with less,

@@ -40,7 +40,7 @@
     <template v-slot:image>
       <scroll-parallax class="-z-50 absolute" :speed="0.2">
         <div
-          class="w-100 bg-cover mt-[-600px] w-screen h-[60vh]"
+          class="w-100 bg-cover mt-[-500px] w-screen h-[40rem]"
           :style="`background-image: url(/assets/hero-images/bw-office.jpg)`"
           alt=""
         ></div>
@@ -91,7 +91,7 @@
     <template v-slot:image>
       <scroll-parallax class="-z-50 absolute" :speed="0.2">
         <div
-          class="w-100 bg-cover mt-[-800px] w-screen h-[60vh]"
+          class="w-100 bg-cover mt-[-800px] w-screen h-[40rem]"
           :style="`background-image: url(/assets/hero-images/table-meeting.jpg)`"
           alt=""
         ></div>
