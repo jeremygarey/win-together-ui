@@ -14,7 +14,7 @@
     "
     :class="transparentNav ? 'bg-transparent text-white' : 'bg-white shadow-md'"
   >
-    <ul class="flex items-center container">
+    <ul class="hidden md:flex items-center container">
       <li>
         <router-link to="/">
           <img
@@ -29,47 +29,63 @@
           />
         </router-link>
       </li>
-      <li class="mr-2 lg:mr-4 ml-auto hover:text-green transition">
+      <li
+        v-for="(route, index) in routes"
+        :key="`nav-item-${index}`"
+        class="mr-2 lg:mr-4 hover:text-green transition"
+        :class="index === 0 ? 'ml-auto' : ''"
+      >
         <router-link
-          to="/what-we-do"
+          :to="route.route"
           class="inline-block py-6 px-2 shadow-top-transparent"
           active-class="shadow-top-green transition"
-          >What We Do</router-link
-        >
-      </li>
-      <li class="mr-2 lg:mr-4 hover:text-green transition">
-        <router-link
-          to="/who-we-are"
-          class="inline-block py-6 px-2 shadow-top-transparent"
-          active-class="shadow-top-green transition"
-          >Who We Are</router-link
-        >
-      </li>
-      <li class="mr-2 lg:mr-4 hover:text-green transition">
-        <router-link
-          to="/gxn"
-          class="inline-block py-6 px-2 shadow-top-transparent"
-          active-class="shadow-top-green transition"
-          >Government Excellence Network</router-link
-        >
-      </li>
-      <li class="mr-2 lg:mr-4 hover:text-green transition">
-        <router-link
-          to="/blog"
-          class="inline-block py-6 px-2 shadow-top-transparent"
-          active-class="shadow-top-green transition"
-          >Blog</router-link
-        >
-      </li>
-      <li class="mr-2 lg:mr-4 hover:text-green transition">
-        <router-link
-          to="/contact"
-          class="inline-block py-6 px-2 shadow-top-transparent"
-          active-class="shadow-top-green transition"
-          >Contact</router-link
+          >{{ route.name }}</router-link
         >
       </li>
     </ul>
+    <div class="md:hidden bg-white text-gray-800">
+      <div class="bg-white z-50 relative">
+        <button
+          class="p-3 bg-transparent hover:bg-transparent text-gray-800"
+          @click="toggleNav"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-8 h-8 hover:scale-110 transition"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+      <transition name="slide-fade">
+        <ul
+          class="p-2 bg-white top-0 absolute mt-14 w-full shadow-md z-40"
+          v-if="navOpen"
+        >
+          <li
+            v-for="(route, index) in routes"
+            :key="`mobile-nav-item-${index}`"
+            class="hover:text-green transition"
+          >
+            <router-link
+              :to="route.route"
+              class="inline-block px-2 text-gt"
+              active-class="text-green transition"
+              @click="toggleNav"
+              >{{ route.name }}</router-link
+            >
+          </li>
+        </ul>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -78,6 +94,14 @@ export default {
   data() {
     return {
       scrollPosition: 0,
+      navOpen: false,
+      routes: [
+        { route: "/what-we-do", name: "What We Do" },
+        { route: "/who-we-are", name: "Who We Are" },
+        { route: "/gxn", name: "Government Excellence Network" },
+        { route: "/blog", name: "Blog" },
+        { route: "/contact", name: "Contact" },
+      ],
     };
   },
   computed: {
@@ -90,6 +114,9 @@ export default {
   methods: {
     updateScoll() {
       this.scrollPosition = window.scrollY;
+    },
+    toggleNav() {
+      this.navOpen = !this.navOpen;
     },
   },
   mounted() {
@@ -104,5 +131,16 @@ export default {
 }
 .shadow-top-green {
   box-shadow: inset 0 4px 0 0 #8cc63f;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 250ms ease;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-180px);
 }
 </style>
