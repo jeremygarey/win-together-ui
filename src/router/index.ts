@@ -7,6 +7,7 @@ import Home from "../views/Home.vue";
 import TeamMember from "../views/TeamMember.vue";
 import WhatWeDo from "../views/WhatWeDo.vue";
 import WhoWeAre from "../views/WhoWeAre.vue";
+import PageNotFound from "../views/PageNotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +44,7 @@ const router = createRouter({
       path: "/contact",
       component: Contact,
     },
+    { path: "/:pathMatch(.*)*", name: "not-found", component: PageNotFound },
   ],
   // scrollBehavior(to, from, savedPosition) {
   //   return { top: 0 };

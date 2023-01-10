@@ -30,11 +30,25 @@
       </p>
     </template>
   </info-section>
-  <image-block imageSource="../../../assets/hero-images/bw-office.jpg">
-    <div>
-      People are the only organizational asset with an infinite capacity to
-      appreciate in value.
-    </div>
+  <image-block>
+    <template v-slot:text>
+      <div>
+        People are the only organizational asset with an infinite capacity to
+        appreciate in value.
+      </div>
+    </template>
+    <template v-slot:image>
+      <scroll-parallax
+        class="-z-50 absolute mt-[-600px] md:mt-[-550px]"
+        speed="0.2"
+      >
+        <img
+          class="w-100 object-cover"
+          src="../../../assets/hero-images/bw-office.jpg"
+          alt=""
+        />
+      </scroll-parallax>
+    </template>
   </image-block>
   <info-section
     :textLeft="true"
@@ -68,12 +82,24 @@
     </template>
   </info-section>
   <image-block imageSource="../../../assets/hero-images/table-meeting.jpg">
-    <div>
-      <span class="font-semibold">Coming early 2023:</span> Government
-      Excellence Network (GXN) provides a robust eLearning platform for the
-      public sector to build skills in continuous improvement methods and a
-      forum to exchange ideas. Join now to be notified when the site goes live!
-    </div>
+    <template v-slot:text>
+      <div>
+        <span class="font-semibold">Coming early 2023:</span> Government
+        Excellence Network (GXN) provides a robust eLearning platform for the
+        public sector to build skills in continuous improvement methods and a
+        forum to exchange ideas. Join now to be notified when the site goes
+        live!
+      </div>
+    </template>
+    <template v-slot:image>
+      <scroll-parallax class="-z-50 absolute mt-[-500px]" speed="0.2">
+        <img
+          class="w-100 object-cover mt-[-500px]"
+          src="../../../assets/hero-images/table-meeting.jpg"
+          alt=""
+        />
+      </scroll-parallax>
+    </template>
   </image-block>
   <slider title="Timeless Words From The Past" />
   <socials-block />
@@ -86,6 +112,7 @@ import ImageBlock from "@/components/ImageBlock.vue";
 import Slider from "@/components/home/Slider.vue";
 import SocialsBlock from "@/components/home/SocialsBlock.vue";
 import { setInitialOpacities, animateOnScroll } from "@/animations";
+import ScrollParallax from "vue3-parallax/src/components/ScrollParallax.vue";
 
 export default {
   components: {
@@ -94,6 +121,7 @@ export default {
     ImageBlock,
     Slider,
     SocialsBlock,
+    ScrollParallax,
   },
   mounted() {
     setInitialOpacities();
