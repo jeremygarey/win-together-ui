@@ -44,7 +44,7 @@
       >
         <img
           class="w-100 object-cover"
-          src="@/assets/images/bw-office.jpg"
+          src="../../public/assets/hero-images/bw-office.jpg"
           alt=""
         />
       </scroll-parallax>
@@ -81,7 +81,7 @@
       </p>
     </template>
   </info-section>
-  <image-block imageSource="@/assets/hero-images/table-meeting.jpg">
+  <image-block>
     <template v-slot:text>
       <div>
         <span class="font-semibold">Coming early 2023:</span> Government
@@ -95,7 +95,7 @@
       <scroll-parallax class="-z-50 absolute mt-[-500px]" speed="0.2">
         <img
           class="w-100 object-cover mt-[-500px]"
-          src="@/assets/images/table-meeting.jpg"
+          src="../../public/assets/hero-images/table-meeting.jpg"
           alt=""
         />
       </scroll-parallax>
