@@ -1,7 +1,7 @@
 <template>
   <div>
     <partial-hero
-      imageSource="../../assets/hero-images/bw-office.jpg"
+      imageSource="/assets/hero-images/bw-office.jpg"
     ></partial-hero>
     <title-section
       title="Reflections"

@@ -1,5 +1,5 @@
 <template>
-  <partial-hero imageSource="../../assets/hero-images/government.jpg" />
+  <partial-hero imageSource="/assets/hero-images/government.jpg" />
   <title-section
     title="Government Excellence Network"
     subtitle="Coming December 2022"

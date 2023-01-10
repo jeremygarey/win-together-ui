@@ -1,6 +1,6 @@
 <template>
   <div>
-    <partial-hero imageSource="'../../assets/hero-images/table-meeting.jpg'" />
+    <partial-hero imageSource="'/assets/hero-images/table-meeting.jpg'" />
     <title-section
       title="Meet The Core Team"
       subtitle="Decades of diverse experiences. United by a relentless commitment to improvement. "

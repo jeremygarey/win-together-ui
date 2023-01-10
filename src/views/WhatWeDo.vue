@@ -1,8 +1,6 @@
 <template>
   <div>
-    <partial-hero
-      imageSource="'../../assets/hero-images/table-meeting-3.jpg'"
-    />
+    <partial-hero imageSource="'/assets/hero-images/table-meeting-3.jpg'" />
     <title-section
       title="About Us"
       subtitle="Win Together® exists to enable performance excellence in local governments."
@@ -34,9 +32,17 @@
         </p>
       </template>
     </info-section>
-    <image-block
-      imageSource="../../../public/assets/hero-images/table-topdown.jpg"
-    />
+    <image-block>
+      <template v-slot:image>
+        <scroll-parallax class="-z-50 absolute" speed="0.2">
+          <div
+            class="w-100 bg-cover mt-[-400px] w-screen h-[60vh]"
+            :style="`background-image: url(/public/assets/hero-images/table-topdown.jpg)`"
+            alt=""
+          ></div>
+        </scroll-parallax>
+      </template>
+    </image-block>
     <columns-section title="Our Principles">
       <template v-slot:col-1>
         <img
@@ -91,6 +97,7 @@ import InfoSection from "@/components/InfoSection.vue";
 import ImageBlock from "@/components/ImageBlock.vue";
 import ColumnsSection from "@/components/ColumnsSection.vue";
 import { setInitialOpacities, animateOnScroll } from "@/animations.js";
+import ScrollParallax from "vue3-parallax/src/components/ScrollParallax.vue";
 
 export default {
   components: {
@@ -99,6 +106,7 @@ export default {
     InfoSection,
     ImageBlock,
     ColumnsSection,
+    ScrollParallax,
   },
   mounted() {
     setInitialOpacities();

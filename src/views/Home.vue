@@ -38,15 +38,12 @@
       </div>
     </template>
     <template v-slot:image>
-      <scroll-parallax
-        class="-z-50 absolute mt-[-600px] md:mt-[-550px]"
-        speed="0.2"
-      >
-        <img
-          class="w-100 object-cover"
-          src="../../public/assets/hero-images/bw-office.jpg"
+      <scroll-parallax class="-z-50 absolute" speed="0.2">
+        <div
+          class="w-100 bg-cover mt-[-600px] w-screen h-[60vh]"
+          :style="`background-image: url(/public/assets/hero-images/bw-office.jpg)`"
           alt=""
-        />
+        ></div>
       </scroll-parallax>
     </template>
   </image-block>
@@ -92,12 +89,12 @@
       </div>
     </template>
     <template v-slot:image>
-      <scroll-parallax class="-z-50 absolute mt-[-500px]" speed="0.2">
-        <img
-          class="w-100 object-cover mt-[-500px]"
-          src="../../public/assets/hero-images/table-meeting.jpg"
+      <scroll-parallax class="-z-50 absolute" speed="0.2">
+        <div
+          class="w-100 bg-cover mt-[-800px] w-screen h-[60vh]"
+          :style="`background-image: url(/public/assets/hero-images/table-meeting.jpg)`"
           alt=""
-        />
+        ></div>
       </scroll-parallax>
     </template>
   </image-block>
