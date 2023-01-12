@@ -3,7 +3,7 @@
     <div class="container">
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
         <router-link
-          v-for="(blog, id) in blogPosts"
+          v-for="(blog, id) in store.blogPosts"
           :key="id"
           :to="`/blog/${id}`"
         >
@@ -31,10 +31,10 @@
                 "
               >
                 <div class="font-bold">
-                  {{ blog.title }}
+                  {{ blog.name }}
                 </div>
                 <div>
-                  {{ blog.date }}
+                  {{ blog.updatedDate }}
                 </div>
               </div>
             </div>
@@ -46,35 +46,42 @@
 </template>
 
 <script>
+import { useCmsStore } from "@/stores/cms";
 export default {
-  data() {
+  setup() {
+    const store = useCmsStore();
     return {
-      blogPosts: {
-        1: {
-          title: "7 Must Have Tools For Web Designers",
-          author: "Jeremy Garey",
-          summary:
-            "Commodi eligendi quisquam iste temporibus sint. Fuga qui molestiae non. Maiores beatae enim nisi illum. Aspernatur accusantium dolorem reprehenderit odit voluptatibus. Voluptates qui molestiae. Sit quasi sunt ut voluptate est. Ex voluptatibus voluptas velit commodi quia non rem",
-          body: "Nulla blanditiis possimus et a voluptatem omnis nemo nam. Illo et molestias ut error vero non ab repudiandae. Possimus explicabo consequatur vero fugiat occaecati vel praesentium. Ab quia modi cum numquam fuga iure. Assumenda quae dolor eum sunt voluptas cupiditate dolore nam fugit. Aut sed alias facere dignissimos sed eos eum occaecati.",
-          mainImage: "https://picsum.photos/200/200",
-          thumbnailImage: "https://picsum.photos/399/200",
-          date: "12/29/2000",
-        },
-        2: {
-          title: "7 Must Have Tools For Web Designers",
-          author: "Jeremy Garey",
-          summary:
-            "Commodi eligendi quisquam iste temporibus sint. Fuga qui molestiae non. Maiores beatae enim nisi illum. Aspernatur accusantium dolorem reprehenderit odit voluptatibus. Voluptates qui molestiae. Sit quasi sunt ut voluptate est. Ex voluptatibus voluptas velit commodi quia non rem",
-          body: "Nulla blanditiis possimus et a voluptatem omnis nemo nam. Illo et molestias ut error vero non ab repudiandae. Possimus explicabo consequatur vero fugiat occaecati vel praesentium. Ab quia modi cum numquam fuga iure. Assumenda quae dolor eum sunt voluptas cupiditate dolore nam fugit. Aut sed alias facere dignissimos sed eos eum occaecati.",
-          mainImage: "https://picsum.photos/200/200",
-          thumbnailImage: "https://picsum.photos/400/200",
-          date: "12/29/2000",
-        },
-      },
+      store,
     };
   },
-  mounted() {
-    // trigger fill of blog post thumbnails
-  },
+  // data() {
+  //   return {
+  //     blogPosts: {
+  //       1: {
+  //         title: "7 Must Have Tools For Web Designers",
+  //         author: "Jeremy Garey",
+  //         summary:
+  //           "Commodi eligendi quisquam iste temporibus sint. Fuga qui molestiae non. Maiores beatae enim nisi illum. Aspernatur accusantium dolorem reprehenderit odit voluptatibus. Voluptates qui molestiae. Sit quasi sunt ut voluptate est. Ex voluptatibus voluptas velit commodi quia non rem",
+  //         body: "Nulla blanditiis possimus et a voluptatem omnis nemo nam. Illo et molestias ut error vero non ab repudiandae. Possimus explicabo consequatur vero fugiat occaecati vel praesentium. Ab quia modi cum numquam fuga iure. Assumenda quae dolor eum sunt voluptas cupiditate dolore nam fugit. Aut sed alias facere dignissimos sed eos eum occaecati.",
+  //         mainImage: "https://picsum.photos/200/200",
+  //         thumbnailImage: "https://picsum.photos/399/200",
+  //         date: "12/29/2000",
+  //       },
+  //       2: {
+  //         title: "7 Must Have Tools For Web Designers",
+  //         author: "Jeremy Garey",
+  //         summary:
+  //           "Commodi eligendi quisquam iste temporibus sint. Fuga qui molestiae non. Maiores beatae enim nisi illum. Aspernatur accusantium dolorem reprehenderit odit voluptatibus. Voluptates qui molestiae. Sit quasi sunt ut voluptate est. Ex voluptatibus voluptas velit commodi quia non rem",
+  //         body: "Nulla blanditiis possimus et a voluptatem omnis nemo nam. Illo et molestias ut error vero non ab repudiandae. Possimus explicabo consequatur vero fugiat occaecati vel praesentium. Ab quia modi cum numquam fuga iure. Assumenda quae dolor eum sunt voluptas cupiditate dolore nam fugit. Aut sed alias facere dignissimos sed eos eum occaecati.",
+  //         mainImage: "https://picsum.photos/200/200",
+  //         thumbnailImage: "https://picsum.photos/400/200",
+  //         date: "12/29/2000",
+  //       },
+  //     },
+  //   };
+  // },
+  // mounted() {
+  //   // trigger fill of blog post thumbnails
+  // },
 };
 </script>
