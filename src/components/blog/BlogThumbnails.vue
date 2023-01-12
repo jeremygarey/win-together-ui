@@ -1,13 +1,13 @@
 <template>
   <div class="min-h-[20vh] bg-white px-4 py-14 text-gray-800">
     <div class="container">
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="sm:grid grid-cols-2 lg:grid-cols-3 gap-4">
         <router-link
           v-for="(blog, id) in store.blogPosts"
           :key="id"
           :to="`/blog/${id}`"
         >
-          <div>
+          <div class="mb-4 sm:mb-0">
             <div
               class="
                 drop-shadow-lg
