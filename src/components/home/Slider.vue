@@ -5,7 +5,6 @@
       justify-center
       md:min-h-[20vh]
       py-14
-      justify-center
       bg-white
       px-4
       text-gray-800
