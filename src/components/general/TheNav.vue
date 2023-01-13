@@ -44,9 +44,16 @@
       </li>
     </ul>
     <div class="md:hidden bg-white text-gray-800">
-      <div class="bg-white z-50 relative">
+      <div class="flex justify-between py-2 px-3 bg-white z-50 relative">
+        <router-link to="/" @click="navOpen = false">
+          <img
+            src="@/assets/logos/logo-dark.svg"
+            class="w-8 h-8 hover:scale-110 transition"
+            alt=""
+          />
+        </router-link>
         <button
-          class="p-3 bg-transparent hover:bg-transparent text-gray-800"
+          class="bg-transparent hover:bg-transparent text-gray-800 p-0"
           @click="toggleNav"
         >
           <svg
@@ -67,7 +74,7 @@
       </div>
       <transition name="slide-fade">
         <ul
-          class="p-2 bg-white top-0 absolute mt-14 w-full shadow-md z-40"
+          class="p-2 bg-white top-0 absolute mt-12 w-full shadow-md z-40"
           v-if="navOpen"
         >
           <li class="hover:text-green transition py-2">
