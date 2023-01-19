@@ -21,6 +21,7 @@
             hover:bg-transparent hover:scale-110
             hidden
             md:block
+            p-0
           "
           @click="prev()"
         >
@@ -40,8 +41,10 @@
           </svg>
         </button>
 
-        <div class="relative overflow-hidden w-10/12 flex items-center">
-          <div class="h-[34rem] w-full">
+        <div class="relative overflow-hidden w-10/12">
+          <div
+            class="h-[32rem] sm:h-[28rem] w-full flex flex-col justify-center"
+          >
             <slider-item
               v-for="(slide, index) in slides"
               :key="`item-${index}`"

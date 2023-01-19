@@ -10,7 +10,7 @@
           <div class="mb-4 sm:mb-0">
             <div
               class="
-                drop-shadow-lg
+                shadow-lg shadow-black/20
                 rounded-2xl
                 hover:scale-105
                 transition

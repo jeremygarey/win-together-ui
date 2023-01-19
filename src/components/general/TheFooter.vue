@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="bg-gray-800 text-gray-400 p-10">
+    <div class="bg-gray-800 text-gray-400 px-4 py-8 sm:p-10">
       <div class="container">
         <div class="md:grid grid-cols-4 gap-14">
           <div class="col-span-2">
@@ -58,6 +58,23 @@
                 <a class="hover:text-white transition" href="/">LinkedIn</a>
               </li>
             </ul>
+            <div class="mt-4">
+              <RouterLink class="" to="/admin/home">
+                <button
+                  v-if="store.isAuthenticated"
+                  class="
+                    text-white text-lg
+                    mt-10
+                    md:mt-0
+                    bg-gray-700
+                    rounded
+                    hover:bg-gray-600
+                  "
+                >
+                  Admin
+                </button>
+              </RouterLink>
+            </div>
           </div>
         </div>
       </div>
@@ -69,3 +86,16 @@
     </div>
   </footer>
 </template>
+
+<script>
+import { useUserStore } from "@/stores/user";
+
+export default {
+  setup() {
+    const store = useUserStore();
+    return {
+      store,
+    };
+  },
+};
+</script>

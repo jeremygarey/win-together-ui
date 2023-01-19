@@ -91,22 +91,15 @@
   <div class=""></div> -->
 
   <div class="min-h-screen pt-28">
-    <div
-      class="
-        bg-gray-800
-        text-white
-        border-b-4 border-green
-        shadow-lg shadow-gray-300
-      "
-    >
-      <div class="sm:grid grid-cols-2 gap-4 container py-8 max-w-screen-md">
+    <div class="bg-green border-b-4 border-green shadow-lg shadow-black/20">
+      <div class="sm:grid grid-cols-2 gap-4 container py-8 max-w-screen-lg">
         <img
           :src="tm.profileImage"
           class="
             rounded-lg
             mx-auto
             animate-slidefrombottom
-            shadow-lg
+            shadow-lg shadow-black/30
             w-9/12
             sm:w-full
           "
@@ -149,7 +142,7 @@
         </div>
       </div>
     </div>
-    <div class="container py-12 max-w-screen-md">
+    <div class="container py-12 max-w-screen-lg">
       <div class="" v-html="tm.longBio"></div>
     </div>
   </div>

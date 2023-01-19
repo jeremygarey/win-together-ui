@@ -1,10 +1,16 @@
 <template>
   <router-link :to="`/who-we-are/${id}`">
     <div
-      class="sm:grid grid-cols-2 gap-4 mb-12 sm:mb-8 max-w-screen-md mx-auto"
+      class="sm:grid grid-cols-2 gap-4 mb-12 sm:mb-8 max-w-screen-lg mx-auto"
     >
       <img
-        class="rounded-lg w-full hover:scale-105 transition"
+        class="
+          rounded-lg
+          w-full
+          hover:scale-105
+          transition
+          shadow-lg shadow-black/20
+        "
         :src="tm.profileImage"
         alt=""
       />

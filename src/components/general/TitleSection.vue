@@ -5,7 +5,7 @@
       text-white
       border-b-4 border-green
       drop-shadow-lg
-      shadow-black
+      shadow-lg shadow-black/20
     "
   >
     <div class="pb-2 container -translate-y-6 md:-translate-y-8">
