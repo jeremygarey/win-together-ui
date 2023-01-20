@@ -1,8 +1,8 @@
 import axios from "axios";
 import type { App } from "vue";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
-const csrftoken = Cookies.get("csrftoken");
+// const csrftoken = Cookies.get("csrftoken");
 // console.log(csrftoken);
 
 interface AxiosOptions {

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import { useUserStore } from "@/stores/user";
 
 // import Cookies from "js-cookie";
@@ -47,27 +47,27 @@ export default {
     };
   },
   methods: {
-    getCookie(name) {
-      let cookieValue = null;
+    // getCookie(name) {
+    //   let cookieValue = null;
 
-      if (document.cookie && document.cookie !== "") {
-        const cookies = document.cookie.split(";");
-        for (let i = 0; i < cookies.length; i++) {
-          const cookie = cookies[i].trim();
+    //   if (document.cookie && document.cookie !== "") {
+    //     const cookies = document.cookie.split(";");
+    //     for (let i = 0; i < cookies.length; i++) {
+    //       const cookie = cookies[i].trim();
 
-          // Does this cookie string begin with the name we want?
-          if (cookie.substring(0, name.length + 1) === name + "=") {
-            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+    //       // Does this cookie string begin with the name we want?
+    //       if (cookie.substring(0, name.length + 1) === name + "=") {
+    //         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
 
-            break;
-          }
-        }
-      }
+    //         break;
+    //       }
+    //     }
+    //   }
 
-      return cookieValue;
-    },
+    //   return cookieValue;
+    // },
     async signIn() {
-      console.log(this.getCookie("csrftoken"));
+      // console.log(this.getCookie("csrftoken"));
       try {
         const response = await this.$axios.post(
           "sign-in",
@@ -81,9 +81,9 @@ export default {
           //   },
           // }
         );
-        console.log(response.status);
+        // console.log(response.status);
         if (response.status === 200) {
-          console.log(response.data);
+          // console.log(response.data);
           this.store.setUser(response.data);
           this.$router.push("/admin/home");
         }
