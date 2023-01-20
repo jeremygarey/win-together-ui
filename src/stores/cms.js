@@ -22,24 +22,44 @@ export const useCmsStore = defineStore("Cms", {
       return this.teamMembers[id];
     },
     async updateTm(tm, id) {
-      const response = await axios.post(`${BASE_URL}team-members/update`, {
-        tm: tm,
-        id: id,
-      });
+      try {
+        const response = await axios.post(`${BASE_URL}team-members/update`, {
+          tm: tm,
+          id: id,
+        });
+        return response.status === 200;
+      } catch (error) {
+        return false;
+      }
     },
     async updateBp(bp, id) {
-      const response = await axios.post(`${BASE_URL}blog-posts/update`, {
-        bp: bp,
-        id: id,
-      });
+      try {
+        const response = await axios.post(`${BASE_URL}blog-posts/update`, {
+          bp: bp,
+          id: id,
+        });
+        return response.status === 200;
+      } catch (error) {
+        return false;
+      }
     },
     async resetTm(id) {
-      const response = await axios.get(`${BASE_URL}team-members/${id}`);
-      this.teamMembers[id] = response.data;
+      try {
+        const response = await axios.get(`${BASE_URL}team-members/${id}`);
+        this.teamMembers[id] = response.data;
+        return response.status === 200;
+      } catch (error) {
+        return false;
+      }
     },
     async resetBp(id) {
-      const response = await axios.get(`${BASE_URL}blog-posts/${id}`);
-      this.blogPosts[id] = response.data;
+      try {
+        const response = await axios.get(`${BASE_URL}blog-posts/${id}`);
+        this.blogPosts[id] = response.data;
+        return response.status === 200;
+      } catch (error) {
+        return false;
+      }
     },
   },
 });

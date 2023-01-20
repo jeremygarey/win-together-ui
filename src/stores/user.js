@@ -13,7 +13,6 @@ export const useUserStore = defineStore("User", {
 
   actions: {
     setUser(user) {
-      console.log(`user in the store --> ${user}`);
       this.user = user;
       this.isAuthenticated = true;
     },

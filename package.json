@@ -16,6 +16,7 @@
     "@tiptap/vue-3": "^2.0.0-beta.209",
     "@types/axios": "^0.14.0",
     "axios": "^1.2.2",
+    "luxon": "^3.2.1",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",

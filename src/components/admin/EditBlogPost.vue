@@ -1,52 +1,64 @@
 <template>
-  <div class="bg-gray-800 p-2 rounded-lg">
-    <h1 class="normal-case">{{ bp.name }}</h1>
+  <div>
+    <div class="bg-gray-800 p-2 rounded-lg">
+      <h1 class="normal-case">{{ bp.name }}</h1>
 
-    <div class="mt-4">Main Image</div>
-    <div class="flex">
-      <img class="rounded h-40" :src="bp.mainImage" alt="" />
-      <div>
-        <button class="rounded bg-gray-700 hover:bg-gray-600">
-          Upload Image
-        </button>
+      <div class="mt-4">Main Image</div>
+      <div class="flex">
+        <img class="rounded h-40" :src="bp.mainImage" alt="" />
+        <div>
+          <button class="rounded bg-gray-700 hover:bg-gray-600">
+            Upload Image
+          </button>
+        </div>
+      </div>
+      <div class="mt-4">Thumbnail Image</div>
+      <div class="flex">
+        <img class="rounded h-40" :src="bp.thumbnailImage" alt="" />
+        <div>
+          <button class="rounded bg-gray-700 hover:bg-gray-600">
+            Upload Image
+          </button>
+        </div>
+      </div>
+      <div class="mt-4">
+        <label for="summary">Summary</label>
+      </div>
+      <div class="">
+        <textarea
+          class="bg-gray-700 w-full p-2 rounded"
+          rows="5"
+          maxlength="1000"
+          id="summary"
+          v-model="bp.summary"
+        ></textarea>
+      </div>
+      <div class="mt-4">
+        <label for="body">Body</label>
+      </div>
+      <div id="body">
+        <rich-text-editor v-model="bp.body" />
       </div>
     </div>
-    <div class="mt-4">Thumbnail Image</div>
-    <div class="flex">
-      <img class="rounded h-40" :src="bp.thumbnailImage" alt="" />
-      <div>
-        <button class="rounded bg-gray-700 hover:bg-gray-600">
-          Upload Image
-        </button>
-      </div>
+    <div class="flex mt-4">
+      <button
+        @click="resetChanges"
+        class="rounded bg-gray-700 hover:bg-gray-600"
+      >
+        Reset
+      </button>
+      <button @click="saveChanges" class="mx-2 rounded">Save</button>
+      <transition name="fade">
+        <div v-if="displaySuccess" class="p-2 ml-8 bg-darkgreen rounded">
+          {{ message }}
+        </div>
+      </transition>
+      <transition name="fade">
+        <div v-if="displayError" class="bg-red-800 p-2 rounded ml-8">
+          {{ message }}
+        </div>
+      </transition>
     </div>
-    <div class="mt-4">
-      <label for="summary">Summary</label>
-    </div>
-    <div class="">
-      <textarea
-        class="bg-gray-700 w-full p-2 rounded"
-        rows="5"
-        maxlength="1000"
-        id="summary"
-        v-model="bp.summary"
-      ></textarea>
-    </div>
-    <div class="mt-4">
-      <label for="body">Body</label>
-    </div>
-    <div id="body">
-      <rich-text-editor v-model="bp.body" />
-    </div>
-  </div>
-  <div class="flex justify-center mt-4">
-    <button
-      @click="resetChanges"
-      class="mx-2 rounded bg-gray-700 hover:bg-gray-600"
-    >
-      Reset
-    </button>
-    <button @click="saveChanges" class="mx-2 rounded">Save</button>
   </div>
 </template>
 
@@ -61,6 +73,13 @@ export default {
       store,
     };
   },
+  data() {
+    return {
+      displaySuccess: false,
+      displayError: false,
+      message: "",
+    };
+  },
   components: {
     RichTextEditor,
   },
@@ -69,13 +88,48 @@ export default {
     id: String,
   },
   methods: {
-    resetChanges() {
-      this.store.resetBp(this.id);
+    async resetChanges() {
+      const success = await this.store.resetBp(this.id);
+      if (success) {
+        this.showMessage(false, "Reset successfully");
+      } else {
+        this.showMessage(true, "There was an error. Please try again later");
+      }
     },
-    saveChanges() {
-      console.log(this.id);
-      this.store.updateBp(this.bp, this.id);
+    async saveChanges() {
+      const success = await this.store.updateBp(this.bp, this.id);
+      if (success) {
+        this.showMessage(false, "Saved successfully");
+      } else {
+        this.showMessage(true, "There was an error. Please try again later");
+      }
+    },
+    showMessage(error, message) {
+      this.message = message;
+      if (error) {
+        this.displayError = true;
+        setTimeout(() => {
+          this.displayError = false;
+        }, 8000);
+      } else {
+        this.displaySuccess = true;
+        setTimeout(() => {
+          this.displaySuccess = false;
+        }, 5000);
+      }
     },
   },
 };
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 300ms ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

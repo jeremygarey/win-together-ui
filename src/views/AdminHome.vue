@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="w-8/12">
+      <div class="w-9/12 ml-8">
         <edit-team-member
           v-if="editingTm"
           :tm="store.teamMembers[currentTmEditId]"
@@ -52,6 +52,9 @@
           :bp="store.blogPosts[currentBpEditId]"
           :id="currentBpEditId"
         />
+        <div v-if="!editingTm && !editingBp" class="bg-gray-800 p-2 rounded">
+          Select an object to edit.
+        </div>
       </div>
     </div>
   </div>
@@ -81,15 +84,11 @@ export default {
   },
   methods: {
     setTmEdit(tm, id) {
-      console.log("set tm");
-      console.log(id);
       this.editingBp = false;
       this.editingTm = true;
       this.currentTmEditId = id;
     },
     setBpEdit(bp, id) {
-      console.log("set bp");
-      console.log(id);
       this.editingTm = false;
       this.editingBp = true;
       this.currentBpEditId = id;

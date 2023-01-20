@@ -8,7 +8,7 @@
             <p>Sign up for our newsletter and future updates</p>
             <div class="flex mt-4 w-full">
               <input
-                type="text"
+                type="email"
                 class="rounded-l-lg text-gray-800 px-3 outline-none w-8/12"
               />
               <button
@@ -95,6 +95,11 @@ export default {
     const store = useUserStore();
     return {
       store,
+    };
+  },
+  data() {
+    return {
+      email: "",
     };
   },
 };

@@ -69,7 +69,6 @@ router.beforeEach(async (to) => {
   const authRequired = adminPages.includes(to.path);
   const userStore = useUserStore();
 
-  console.log(authRequired && !userStore.isAuthenticated);
   if (authRequired && !userStore.isAuthenticated) {
     return "/admin";
   }

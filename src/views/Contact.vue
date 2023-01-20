@@ -25,8 +25,8 @@
             testing the modules at no charge in exchange for sharing your
             feedback with us.
           </div>
-          <form class="">
-            <div class="">
+          <div class="flex gap-4">
+            <div class="grow">
               <input
                 class="
                   mt-4
@@ -39,10 +39,11 @@
                 "
                 id="name"
                 type="text"
-                placeholder="Name"
+                placeholder="First name"
+                v-model="firstName"
               />
             </div>
-            <div class="">
+            <div class="grow">
               <input
                 class="
                   mt-4
@@ -53,12 +54,15 @@
                   text-gray-800
                   focus:outline-none focus:shadow-outline
                 "
-                id="email"
-                type="email"
-                placeholder="Email"
+                id="name"
+                type="text"
+                placeholder="Last name"
+                v-model="lastName"
               />
             </div>
-            <textarea
+          </div>
+          <div class="">
+            <input
               class="
                 mt-4
                 rounded-lg
@@ -68,11 +72,30 @@
                 text-gray-800
                 focus:outline-none focus:shadow-outline
               "
-              id="message"
-              maxLength="5000"
-              placeholder="Message"
-            ></textarea>
-          </form>
+              id="email"
+              type="email"
+              placeholder="Email"
+              v-model="email"
+            />
+          </div>
+          <textarea
+            class="
+              mt-4
+              rounded-lg
+              w-full
+              py-2
+              px-3
+              text-gray-800
+              focus:outline-none focus:shadow-outline
+            "
+            id="message"
+            maxLength="5000"
+            placeholder="Message"
+            v-model="message"
+          ></textarea>
+          <div class="text-center">
+            <button class="mt-4" @click="submitForm()">Submit</button>
+          </div>
         </title-section>
       </div>
     </div>
@@ -84,6 +107,24 @@ import TitleSection from "@/components/general/TitleSection.vue";
 export default {
   components: {
     TitleSection,
+  },
+  data() {
+    return {
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+    };
+  },
+  methods: {
+    async submitForm() {
+      const response = await this.$axios.post("contact", {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.email,
+        message: this.message,
+      });
+    },
   },
 };
 </script>
