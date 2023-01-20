@@ -44,12 +44,12 @@
       <div class="w-8/12">
         <edit-team-member
           v-if="editingTm"
-          :tm="currentTmEdit"
+          :tm="store.teamMembers[currentTmEditId]"
           :id="currentTmEditId"
         />
         <edit-blog-post
           v-if="editingBp"
-          :bp="currentBpEdit"
+          :bp="store.blogPosts[currentBpEditId]"
           :id="currentBpEditId"
         />
       </div>
@@ -74,10 +74,8 @@ export default {
   data() {
     return {
       editingTm: false,
-      currentTmEdit: null,
       currentTmEditId: null,
       editingBp: false,
-      currentBpEdit: null,
       currentBpEditId: null,
     };
   },
@@ -87,7 +85,6 @@ export default {
       console.log(id);
       this.editingBp = false;
       this.editingTm = true;
-      this.currentTmEdit = tm;
       this.currentTmEditId = id;
     },
     setBpEdit(bp, id) {
@@ -95,7 +92,6 @@ export default {
       console.log(id);
       this.editingTm = false;
       this.editingBp = true;
-      this.currentBpEdit = bp;
       this.currentBpEditId = id;
     },
   },
