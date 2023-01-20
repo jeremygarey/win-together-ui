@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     resetChanges() {
-      console.log("reset");
+      this.store.resetBp(this.id);
     },
     saveChanges() {
       console.log(this.id);

@@ -26,14 +26,20 @@ export const useCmsStore = defineStore("Cms", {
         tm: tm,
         id: id,
       });
-      console.log(response);
     },
     async updateBp(bp, id) {
       const response = await axios.post(`${BASE_URL}blog-posts/update`, {
         bp: bp,
         id: id,
       });
-      console.log(response);
+    },
+    async resetTm(id) {
+      const response = await axios.get(`${BASE_URL}team-members/${id}`);
+      this.teamMembers[id] = response.data;
+    },
+    async resetBp(id) {
+      const response = await axios.get(`${BASE_URL}blog-posts/${id}`);
+      this.blogPosts[id] = response.data;
     },
   },
 });

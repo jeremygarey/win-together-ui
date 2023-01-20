@@ -84,10 +84,9 @@ export default {
   },
   methods: {
     resetChanges() {
-      console.log("reset");
+      this.store.resetTm(this.id);
     },
     saveChanges() {
-      console.log(this.tm, this.id);
       this.store.updateTm(this.tm, this.id);
     },
   },
