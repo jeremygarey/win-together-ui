@@ -5,25 +5,52 @@
         <div class="md:grid grid-cols-4 gap-14">
           <div class="col-span-2">
             <img src="@/assets/logos/logo-wide-light.svg" alt="" />
-            <p>Sign up for our newsletter and future updates</p>
-            <div class="flex mt-4 w-full">
+            <p class="mt-2">Sign up for our newsletter and future updates</p>
+            <div class="flex mt-2 w-full">
               <input
+                v-model="email"
                 type="email"
                 class="rounded-l-lg text-gray-800 px-3 outline-none w-8/12"
+                placeholder="youremail@gmail.com"
               />
               <button
                 class="
-                  bg-gray-500
                   text-white
                   rounded-r-lg rounded-l-none
                   hover:bg-gray-600
                   transition
                   w-4/12
                 "
+                :class="
+                  isValidEmail
+                    ? 'cursor-pointer bg-green hover:bg-darkgreen'
+                    : 'cursor-default bg-gray-600 hover:bg-gray-600 text-gray-300'
+                "
+                @click="
+                  isValidEmail
+                    ? subscribe()
+                    : showMessage(true, 'Please enter a valid email')
+                "
               >
                 Subscribe
               </button>
             </div>
+            <transition name="fade">
+              <div
+                v-if="displaySuccess"
+                class="p-2 bg-darkgreen rounded mt-4 text-center text-white"
+              >
+                {{ message }}
+              </div>
+            </transition>
+            <transition name="fade">
+              <div
+                v-if="displayError"
+                class="bg-red-800 p-2 rounded mt-4 text-center text-white"
+              >
+                {{ message }}
+              </div>
+            </transition>
           </div>
           <div>
             <h1 class="mt-4 md:mt-0 text-lg text-white">COMPANY</h1>
@@ -100,7 +127,68 @@ export default {
   data() {
     return {
       email: "",
+      message: "",
+      displaySuccess: false,
+      displayError: false,
     };
+  },
+
+  computed: {
+    isValidEmail() {
+      // thank you ChatGPT
+      var re =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(this.email).toLowerCase());
+    },
+  },
+
+  methods: {
+    async subscribe() {
+      try {
+        const response = await this.$axios.post("email-subscribe", {
+          email: this.email,
+        });
+        if (response.status === 200) {
+          this.handleSuccess();
+        } else {
+          this.showMessage(true, "There was an error. Please try again later");
+        }
+      } catch (error) {
+        this.showMessage(true, "There was an error. Please try again later");
+      }
+    },
+
+    handleSuccess() {
+      this.showMessage(false, "Successfully subscribed!");
+      this.email = "";
+    },
+
+    showMessage(error, message) {
+      this.message = message;
+      if (error) {
+        this.displayError = true;
+        setTimeout(() => {
+          this.displayError = false;
+        }, 8000);
+      } else {
+        this.displaySuccess = true;
+        setTimeout(() => {
+          this.displaySuccess = false;
+        }, 5000);
+      }
+    },
   },
 };
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 300ms ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
