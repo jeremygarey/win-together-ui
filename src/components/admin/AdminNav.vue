@@ -27,7 +27,7 @@
         transition
         cursor-pointer
       "
-      :class="currentPage === 'pageVisit' ? 'bg-gray-600' : ''"
+      :class="currentPage === 'pageVisits' ? 'bg-gray-600' : ''"
       @click="setPage('pageVisits')"
     >
       Page Visits
