@@ -58,7 +58,6 @@ export default {
   methods: {
     formatDate(isoString) {
       return DateTime.fromISO(isoString).toLocaleString(DateTime.DATE_FULL);
-      // return `${dueDate.monthShort} ${dueDate.day}`;
     },
   },
 };

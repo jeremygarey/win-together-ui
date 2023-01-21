@@ -1,5 +1,16 @@
 <template>
-  <div class="container bg-gray-800 rounded-lg p-2 flex gap-2 justify-center">
+  <!-- <div class="container bg-gray-800 rounded-lg p-2 flex gap-2 justify-center"> -->
+  <div
+    class="
+      container
+      bg-gray-800
+      rounded-lg
+      p-2
+      grid grid-cols-4
+      gap-2
+      justify-center
+    "
+  >
     <div
       class="
         grow
@@ -46,7 +57,7 @@
       :class="currentPage === 'subscribers' ? 'bg-gray-600' : ''"
       @click="setPage('subscribers')"
     >
-      Newsletter Subscribers List
+      Subscribers List
     </div>
     <div
       class="
@@ -62,7 +73,7 @@
       :class="currentPage === 'formSubmissions' ? 'bg-gray-600' : ''"
       @click="setPage('formSubmissions')"
     >
-      Contact Form Submissions
+      Form Submissions
     </div>
   </div>
 </template>
