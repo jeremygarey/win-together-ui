@@ -6,12 +6,12 @@
       <div class="w-3/12 text-right">Date</div>
       <div class="w-2/12 text-right">Subscribed</div>
     </div>
-    <div
-      class="mb-6"
-      v-for="(cfs, id) in adminStore.contactFormSubmissions"
-      :key="`cfs-${id}`"
-    >
-      <div class="p-2 bg-gray-800 rounded-lg">
+    <div class="mb-6 bg-gray-800 rounded-lg p-2 flex flex-col gap-4">
+      <div
+        v-for="(cfs, id) in adminStore.contactFormSubmissions"
+        :key="`cfs-${id}`"
+        class="p-2 bg-gray-700 rounded-lg"
+      >
         <div class="flex pb-2 font-light">
           <div class="font-bold w-3/12">{{ cfs.name }}</div>
           <div class="w-4/12">{{ cfs.email }}</div>
@@ -52,7 +52,7 @@
             </svg>
           </div>
         </div>
-        <div class="bg-gray-700 p-2 rounded font-light">
+        <div class="bg-gray-800 p-2 rounded font-light">
           <p>{{ cfs.message }}</p>
         </div>
       </div>

@@ -13,10 +13,20 @@ export const useAdminStore = defineStore("Admin", {
 
   actions: {
     async fill() {
+      this.getContactFormSubmissions();
+      this.getSubscribers();
+    },
+
+    async getContactFormSubmissions() {
       const contactFormSubmissions = await axios.get(
         `${BASE_URL}contact-form-submissions`
       );
       this.contactFormSubmissions = contactFormSubmissions.data;
+    },
+
+    async getSubscribers() {
+      const subscribers = await axios.get(`${BASE_URL}subscribers`);
+      this.subscribers = subscribers.data;
     },
   },
 });
