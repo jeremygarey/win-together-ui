@@ -8,13 +8,14 @@ if (process.env.NODE_ENV === "production") {
 
 export const useAdminStore = defineStore("Admin", {
   state: () => {
-    return { pageVisits: {}, subscribers: {}, contactFormSubmissions: {} };
+    return { pageViews: {}, subscribers: {}, contactFormSubmissions: {} };
   },
 
   actions: {
     async fill() {
       this.getContactFormSubmissions();
       this.getSubscribers();
+      this.getPageViews();
     },
 
     async getContactFormSubmissions() {
@@ -27,6 +28,11 @@ export const useAdminStore = defineStore("Admin", {
     async getSubscribers() {
       const subscribers = await axios.get(`${BASE_URL}subscribers`);
       this.subscribers = subscribers.data;
+    },
+
+    async getPageViews() {
+      const pageViews = await axios.get(`${BASE_URL}pageviews`);
+      this.pageViews = pageViews.data;
     },
   },
 });

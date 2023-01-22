@@ -2,6 +2,7 @@
   <div class="min-h-screen bg-gray-900 pt-24 pb-10 text-white">
     <admin-nav @page-change="setPage" class="mb-6" />
     <edit-cms-items v-if="currentPage === 'editCmsItems'" />
+    <page-views v-if="currentPage === 'pageViews'" />
     <subscribers v-if="currentPage === 'subscribers'" />
     <contact-form-submissions v-if="currentPage === 'formSubmissions'" />
   </div>
@@ -12,6 +13,7 @@ import AdminNav from "@/components/admin/AdminNav.vue";
 import ContactFormSubmissions from "@/components/admin/ContactFormSubmissions.vue";
 import EditCmsItems from "@/components/admin/EditCmsItems.vue";
 import Subscribers from "@/components/admin/Subscribers.vue";
+import PageViews from "@/components/admin/PageViews.vue";
 
 import { useAdminStore } from "@/stores/admin";
 
@@ -26,6 +28,7 @@ export default {
     AdminNav,
     ContactFormSubmissions,
     EditCmsItems,
+    PageViews,
     Subscribers,
   },
   data() {

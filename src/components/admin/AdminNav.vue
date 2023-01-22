@@ -38,8 +38,8 @@
         transition
         cursor-pointer
       "
-      :class="currentPage === 'pageVisits' ? 'bg-gray-600' : ''"
-      @click="setPage('pageVisits')"
+      :class="currentPage === 'pageViews' ? 'bg-gray-600' : ''"
+      @click="setPage('pageViews')"
     >
       Page Visits
     </div>
