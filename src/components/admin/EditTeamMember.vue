@@ -112,7 +112,7 @@
 
 <script>
 import RichTextEditor from "@/components/admin/RichTextEditor.vue";
-import ImageUpload from "./ImageUpload.vue";
+// import ImageUpload from "./ImageUpload.vue";
 import { useCmsStore } from "@/stores/cms";
 
 export default {
@@ -125,7 +125,7 @@ export default {
   emits: ["archive"],
   components: {
     RichTextEditor,
-    ImageUpload,
+    // ImageUpload,
   },
   props: {
     tm: Object,
