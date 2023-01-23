@@ -41,6 +41,11 @@
           </button>
         </div> -->
       </div>
+      <input
+        class="bg-gray-700 p-2 rounded w-full font-light mt-2"
+        type="text"
+        v-model="tm.profileImage"
+      />
       <div class="mt-4">
         <label for="job-title">Job Title</label>
         <input

@@ -20,6 +20,11 @@
           </button>
         </div> -->
       </div>
+      <input
+        class="bg-gray-700 p-2 rounded w-full font-light mt-2"
+        type="text"
+        v-model="bp.mainImage"
+      />
       <div class="mt-4">Thumbnail Image</div>
       <div class="flex">
         <img class="rounded h-40" :src="bp.thumbnailImage" alt="" />
@@ -29,6 +34,11 @@
           </button>
         </div> -->
       </div>
+      <input
+        class="bg-gray-700 p-2 rounded w-full font-light mt-2"
+        type="text"
+        v-model="bp.thumbnailImage"
+      />
       <div class="mt-4">
         <label for="summary">Summary</label>
         <textarea
@@ -45,15 +55,20 @@
       <div id="body">
         <rich-text-editor v-model="bp.body" />
       </div>
+      <div class="mt-4">
+        <input id="archived" type="checkbox" v-model="bp.archived" />
+        <label class="ml-2" for="archived">Archived</label>
+      </div>
     </div>
     <div class="flex mt-4">
       <button
         @click="resetChanges"
-        class="rounded bg-gray-700 hover:bg-gray-600"
+        class="rounded bg-gray-700 hover:bg-gray-600 mr-2"
+        v-if="!newBp"
       >
         Reset
       </button>
-      <button @click="saveChanges" class="mx-2 rounded">Save</button>
+      <button @click="saveChanges" class="rounded">Save</button>
       <transition name="fade">
         <div v-if="displaySuccess" class="p-2 ml-8 bg-darkgreen rounded">
           {{ message }}
@@ -92,6 +107,7 @@ export default {
   props: {
     bp: Object,
     id: String,
+    newBp: Boolean,
   },
   methods: {
     async resetChanges() {
@@ -103,7 +119,12 @@ export default {
       }
     },
     async saveChanges() {
-      const success = await this.store.updateBp(this.bp, this.id);
+      let success = false;
+      if (this.newBp) {
+        success = await this.store.createBp(this.bp);
+      } else {
+        success = await this.store.updateBp(this.bp, this.id);
+      }
       if (success) {
         this.showMessage(false, "Saved successfully");
       } else {

@@ -30,6 +30,11 @@ export default {
       return this.store.blogPosts[this.id];
     },
   },
+  mounted() {
+    if (this.bp.archived) {
+      this.$router.push("blog");
+    }
+  },
   // data() {
   //   return {
   //     // id: this.$route.params.id,

@@ -170,5 +170,10 @@ export default {
       return this.store.teamMembers[this.id];
     },
   },
+  mounted() {
+    if (this.tm.archived) {
+      this.$router.push("who-we-are");
+    }
+  },
 };
 </script>

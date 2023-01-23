@@ -32,12 +32,43 @@ export const useCmsStore = defineStore("Cms", {
         return false;
       }
     },
+    async createTm(tm) {
+      try {
+        const response = await axios.post(`${BASE_URL}team-members/create`, {
+          tm,
+        });
+        this.teamMembers[response.data.id] = response.data.tm;
+        return response.status === 200;
+      } catch (error) {
+        return false;
+      }
+    },
+    // async archiveTm(id) {
+    //   const response = await axios.post(
+    //     `${BASE_URL}team-members/${id}/archive`,
+    //     {}
+    //   );
+    //   if (response.status === 200) {
+    //     delete this.teamMembers[id];
+    //   }
+    // },
     async updateBp(bp, id) {
       try {
         const response = await axios.post(`${BASE_URL}blog-posts/update`, {
           bp: bp,
           id: id,
         });
+        return response.status === 200;
+      } catch (error) {
+        return false;
+      }
+    },
+    async createBp(bp) {
+      try {
+        const response = await axios.post(`${BASE_URL}blog-posts/create`, {
+          bp,
+        });
+        this.blogPosts[response.data.id] = response.data.bp;
         return response.status === 200;
       } catch (error) {
         return false;

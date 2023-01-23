@@ -70,6 +70,38 @@
             {{ bp.name }}
           </div>
         </div>
+        <div>
+          <div
+            class="
+              p-2
+              bg-gray-700
+              rounded
+              my-2
+              hover:bg-gray-600
+              transition
+              cursor-pointer
+              flex
+            "
+            @click="setNewBpEdit()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 mr-1"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+
+            <span>Add new</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="w-9/12 ml-8">
@@ -81,8 +113,9 @@
       />
       <edit-blog-post
         v-if="editingBp"
-        :bp="store.blogPosts[currentBpEditId]"
+        :bp="newBp ? newBpObject : store.blogPosts[currentBpEditId]"
         :id="currentBpEditId"
+        :newBp="newBp"
       />
       <div v-if="!editingTm && !editingBp" class="bg-gray-800 p-2 rounded">
         Select an object to edit.
@@ -112,6 +145,7 @@ export default {
       newTm: false,
       editingBp: false,
       currentBpEditId: null,
+      newBp: false,
       newTmObject: {
         name: "",
         profileImage: "",
@@ -119,6 +153,15 @@ export default {
         email: "",
         shortBio: "",
         longBio: "",
+        archived: false,
+      },
+      newBpObject: {
+        name: "",
+        mainImage: "",
+        thumbnailImage: "",
+        summary: "",
+        body: "",
+        archived: false,
       },
     };
   },
@@ -138,6 +181,12 @@ export default {
       this.editingTm = false;
       this.editingBp = true;
       this.currentBpEditId = id;
+      this.newBp = false;
+    },
+    setNewBpEdit() {
+      this.editingBp = true;
+      this.editingTm = false;
+      this.newBp = true;
     },
   },
 };
