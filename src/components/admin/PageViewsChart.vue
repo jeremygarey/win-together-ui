@@ -47,6 +47,7 @@ export default {
             fill: false,
             borderColor: "#a9a9a9",
             data: Object.values(this.adminStore.pageViews.byDay),
+            // tension: 0.1,
           },
         ],
       },
@@ -70,6 +71,7 @@ export default {
             ticks: {
               color: "#e4e4e4",
             },
+            beginAtZero: true,
           },
         },
       },

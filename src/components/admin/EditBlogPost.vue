@@ -1,30 +1,36 @@
 <template>
   <div>
     <div class="bg-gray-800 p-2 rounded-lg">
-      <h1 class="normal-case">{{ bp.name }}</h1>
+      <div>
+        <label for="name">Title</label>
+        <input
+          id="name"
+          class="bg-gray-700 p-2 rounded w-full font-light"
+          type="text"
+          v-model="bp.name"
+        />
+      </div>
 
       <div class="mt-4">Main Image</div>
       <div class="flex">
         <img class="rounded h-40" :src="bp.mainImage" alt="" />
-        <div>
+        <!-- <div>
           <button class="rounded bg-gray-700 hover:bg-gray-600">
             Upload Image
           </button>
-        </div>
+        </div> -->
       </div>
       <div class="mt-4">Thumbnail Image</div>
       <div class="flex">
         <img class="rounded h-40" :src="bp.thumbnailImage" alt="" />
-        <div>
+        <!-- <div>
           <button class="rounded bg-gray-700 hover:bg-gray-600">
             Upload Image
           </button>
-        </div>
+        </div> -->
       </div>
       <div class="mt-4">
         <label for="summary">Summary</label>
-      </div>
-      <div class="">
         <textarea
           class="bg-gray-700 w-full p-2 rounded"
           rows="5"

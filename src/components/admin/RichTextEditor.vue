@@ -69,7 +69,7 @@
     >
       h3
     </button>
-    <button
+    <!-- <button
       class="p-1 rounded bg-gray-800 mr-1 mb-1 hover:bg-gray-900"
       @click="editor.chain().focus().toggleBulletList().run()"
       :class="editor.isActive('bulletList') ? 'border border-green' : ''"
@@ -82,7 +82,7 @@
       :class="editor.isActive('orderedList') ? 'border border-green' : ''"
     >
       ordered list
-    </button>
+    </button> -->
     <!-- <button
         class="p-1 rounded bg-gray-800 mr-1 mb-1 hover:bg-gray-900"
         @click="editor.chain().focus().toggleCodeBlock().run()"
@@ -95,19 +95,19 @@
       @click="editor.chain().focus().toggleBlockquote().run()"
       :class="editor.isActive('blockquote') ? 'border border-green' : ''"
     >
-      | -->
+      block quote
     </button>
     <button
       class="p-1 rounded bg-gray-800 mr-1 mb-1 hover:bg-gray-900"
       @click="editor.chain().focus().setHorizontalRule().run()"
     >
-      __
+      horizontal rule
     </button>
     <button
       class="p-1 rounded bg-gray-800 mr-1 mb-1 hover:bg-gray-900"
       @click="editor.chain().focus().setHardBreak().run()"
     >
-      <br />
+      line break
     </button>
     <button
       class="p-1 rounded bg-gray-800 mr-1 mb-1 hover:bg-gray-900"
@@ -212,26 +212,6 @@ export default {
     line-height: 1.1;
   }
 
-  code {
-    background-color: rgba(#616161, 0.1);
-    color: #616161;
-  }
-
-  pre {
-    background: #0d0d0d;
-    color: #fff;
-    font-family: "JetBrainsMono", monospace;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-
-    code {
-      color: inherit;
-      padding: 0;
-      background: none;
-      font-size: 0.8rem;
-    }
-  }
-
   img {
     max-width: 100%;
     height: auto;
@@ -239,12 +219,12 @@ export default {
 
   blockquote {
     padding-left: 1rem;
-    border-left: 2px solid rgba(#0d0d0d, 0.1);
+    border-left: 2px solid rgba(#ffffff, 0.1);
   }
 
   hr {
     border: none;
-    border-top: 2px solid rgba(#0d0d0d, 0.1);
+    border-top: 3px solid rgba(#ffffff, 0.1);
     margin: 2rem 0;
   }
 }

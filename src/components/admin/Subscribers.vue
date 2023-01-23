@@ -1,14 +1,32 @@
 <template>
   <div class="container p-0">
-    <div class="grid grid-cols-3 pb-2 px-2 font-light text-gray-400">
-      <div>Email</div>
-      <div>Name</div>
-      <div class="text-right">Date</div>
-    </div>
-    <div class="p-2 bg-gray-800 rounded-lg flex flex-col gap-2">
+    <div class="p-2 bg-gray-800 rounded-lg grid grid-cols-3 gap-4 gap-y-2">
+      <div class="p-2 bg-gray-700 rounded-lg text-center">
+        <div class="font-black text-green text-3xl">
+          {{ adminStore.subscribers.added.allTime }}
+        </div>
+        <div class="">Total subscribers</div>
+      </div>
+      <div class="p-2 bg-gray-700 rounded-lg text-center">
+        <div class="font-black text-green text-3xl">
+          {{ adminStore.subscribers.added.week }}
+        </div>
+        <div>New this week</div>
+      </div>
+      <div class="p-2 bg-gray-700 rounded-lg text-center">
+        <div class="font-black text-green text-3xl">
+          {{ adminStore.subscribers.added.month }}
+        </div>
+        <div>New this month</div>
+      </div>
+
+      <div class="mt-4">Email</div>
+      <div class="mt-4">Name</div>
+      <div class="text-right mt-4">Subscribed Date</div>
+
       <div
-        class="p-2 bg-gray-700 rounded-lg grid grid-cols-3"
-        v-for="(s, id) in adminStore.subscribers"
+        class="p-2 bg-gray-700 rounded-lg grid grid-cols-3 col-span-3"
+        v-for="(s, id) in adminStore.subscribers.contacts"
         :key="`subscriber-${id}`"
       >
         <div class="font-bold">{{ s.email }}</div>

@@ -19,6 +19,38 @@
             {{ tm.name }}
           </div>
         </div>
+        <div>
+          <div
+            class="
+              p-2
+              bg-gray-700
+              rounded
+              my-2
+              hover:bg-gray-600
+              transition
+              cursor-pointer
+              flex
+            "
+            @click="setNewTmEdit()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 mr-1"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+
+            <span>Add new</span>
+          </div>
+        </div>
       </div>
       <div class="bg-gray-800 p-2 rounded-lg mt-4">
         <h1>Blog Posts</h1>
@@ -43,8 +75,9 @@
     <div class="w-9/12 ml-8">
       <edit-team-member
         v-if="editingTm"
-        :tm="store.teamMembers[currentTmEditId]"
+        :tm="newTm ? newTmObject : store.teamMembers[currentTmEditId]"
         :id="currentTmEditId"
+        :newTm="newTm"
       />
       <edit-blog-post
         v-if="editingBp"
@@ -76,8 +109,17 @@ export default {
     return {
       editingTm: false,
       currentTmEditId: null,
+      newTm: false,
       editingBp: false,
       currentBpEditId: null,
+      newTmObject: {
+        name: "",
+        profileImage: "",
+        jobTitle: "",
+        email: "",
+        shortBio: "",
+        longBio: "",
+      },
     };
   },
   methods: {
@@ -85,6 +127,12 @@ export default {
       this.editingBp = false;
       this.editingTm = true;
       this.currentTmEditId = id;
+      this.newTm = false;
+    },
+    setNewTmEdit() {
+      this.editingBp = false;
+      this.editingTm = true;
+      this.newTm = true;
     },
     setBpEdit(bp, id) {
       this.editingTm = false;
