@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/who-we-are/${id}`">
+  <router-link :to="`/team-member/${id}`">
     <div
       class="sm:grid grid-cols-2 gap-4 mb-12 sm:mb-8 max-w-screen-lg mx-auto"
     >

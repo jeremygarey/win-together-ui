@@ -124,7 +124,7 @@ export default {
   computed: {
     transparentNav() {
       return (
-        this.scrollPosition < 10 && !this.$route.path.includes("/who-we-are/")
+        this.scrollPosition < 10 && !this.$route.path.includes("/team-member/")
       );
     },
   },

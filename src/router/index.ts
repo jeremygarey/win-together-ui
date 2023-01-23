@@ -29,7 +29,7 @@ const router = createRouter({
       component: WhoWeAre,
     },
     {
-      path: "/who-we-are/:id",
+      path: "/team-member/:id",
       component: TeamMember,
     },
     {
@@ -59,7 +59,14 @@ const router = createRouter({
     { path: "/:pathMatch(.*)*", name: "not-found", component: PageNotFound },
   ],
   scrollBehavior(to, from, savedPosition) {
-    return { top: 0 };
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return { el: to.hash, behavior: "smooth" };
+    } else {
+      window.scrollTo(0, 0);
+    }
   },
 });
 

@@ -90,7 +90,7 @@
   </div>
   <div class=""></div> -->
 
-  <div class="min-h-screen pt-28">
+  <div class="min-h-[75vh] pt-28">
     <div class="bg-green border-b-4 border-green shadow-lg shadow-black/20">
       <div class="sm:grid grid-cols-2 gap-4 container py-8 max-w-screen-lg">
         <img
