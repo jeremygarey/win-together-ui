@@ -107,36 +107,26 @@ export default {
     return {
       slides: [
         {
-          quote: "Mirus is cool!",
-          imageSource: "https://picsum.photos/200/200",
-          name: "Jeremy Garey",
-          description: "Front-end Developer",
-        },
-        {
-          // quote: "My boyfriend is so hot <3",
-          quote: "I'm in Israel!",
-          imageSource: "https://picsum.photos/id/100/200/200",
-          name: "Annabella Eckert",
-          description: "Israel explorer",
-        },
-        {
           quote:
             "Don't mistake activity for achievement. To produce results, tasks must be well organized and properly executed; otherwise, it is no different from children running around on the playground - everybody is doing something, but nothing is being done; lots of activity, no achievement.",
-          imageSource: "https://picsum.photos/id/101/200/200",
+          imageSource:
+            "https://storage.googleapis.com/wtg-cms-images/slider/Wooden-p-130x130q80.png",
           name: "John Wooden",
           description: "Coach Wooden's Leadership Game Plan for Success",
         },
         {
           quote:
             "There is nothing so useless as efficiently doing that which should not be done at all.",
-          imageSource: "https://picsum.photos/id/101/200/200",
+          imageSource:
+            "https://storage.googleapis.com/wtg-cms-images/slider/Drucker-p-130x130q80.png",
           name: "Peter Drucker",
           description: "Author, Teacher, Consultant",
         },
         {
           quote:
             "There are four goals of improvement: easier, better, faster, and cheaper. These four goals appear in the order of priority",
-          imageSource: "https://picsum.photos/id/101/200/200",
+          imageSource:
+            "https://storage.googleapis.com/wtg-cms-images/slider/Shingo-p-130x130q80.png",
           name: "Shigeo Shingo",
           description: "Thought leader in continuous improvement",
         },

@@ -2,7 +2,7 @@
   <partial-hero imageSource="/assets/hero-images/government.jpg" />
   <title-section
     title="Government Excellence Network"
-    subtitle="Coming December 2022"
+    subtitle="Coming Early 2023"
   ></title-section>
   <div class="min-h-[20vh] bg-white px-4 py-14 text-gray-800">
     <div class="container">

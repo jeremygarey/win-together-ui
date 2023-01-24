@@ -7,7 +7,7 @@
     >
       <p class="text-xl font-light">"{{ slide.quote }}"</p>
       <img
-        class="rounded-full w-32 h-32 mx-auto mt-4"
+        class="rounded-full w-32 h-32 mx-auto mt-4 object-cover"
         :src="slide.imageSource"
         alt=""
       />
