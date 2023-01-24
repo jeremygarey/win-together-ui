@@ -9,15 +9,15 @@
       </div>
       <div class="p-2 bg-gray-700 rounded-lg text-center">
         <div class="font-black text-green text-3xl">
-          {{ adminStore.subscribers.added.week }}
-        </div>
-        <div>New this week</div>
-      </div>
-      <div class="p-2 bg-gray-700 rounded-lg text-center">
-        <div class="font-black text-green text-3xl">
           {{ adminStore.subscribers.added.month }}
         </div>
         <div>New this month</div>
+      </div>
+      <div class="p-2 bg-gray-700 rounded-lg text-center">
+        <div class="font-black text-green text-3xl">
+          {{ adminStore.subscribers.added.week }}
+        </div>
+        <div>New this week</div>
       </div>
 
       <div class="mt-4">Email</div>

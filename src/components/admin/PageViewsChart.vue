@@ -40,6 +40,7 @@ export default {
     return {
       data: {
         labels: Object.keys(this.adminStore.pageViews.byDay),
+
         datasets: [
           {
             label: "Page views",
@@ -47,15 +48,14 @@ export default {
             fill: false,
             borderColor: "#a9a9a9",
             data: Object.values(this.adminStore.pageViews.byDay),
-            // tension: 0.1,
+
+            // tension: 0.2,
           },
         ],
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        // color: "#ffffff",
-        // yAxes,
         plugins: {
           legend: {
             display: false,

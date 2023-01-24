@@ -39,6 +39,10 @@ export default {
         timeZone,
       });
     }
+
+    // const csrftoken = await this.$axios.get("set-csrf-token", {
+    //   withCredentials: true,
+    // });
   },
 };
 </script>

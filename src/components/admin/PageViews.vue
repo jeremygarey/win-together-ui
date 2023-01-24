@@ -12,15 +12,15 @@
       </div>
       <div class="p-2 bg-gray-700 rounded-lg text-center">
         <div class="font-black text-green text-3xl">
-          {{ adminStore.pageViews.totals.week }}
-        </div>
-        <div>Views last 7 days</div>
-      </div>
-      <div class="p-2 bg-gray-700 rounded-lg text-center">
-        <div class="font-black text-green text-3xl">
           {{ adminStore.pageViews.totals.month }}
         </div>
         <div>Views last 31 days</div>
+      </div>
+      <div class="p-2 bg-gray-700 rounded-lg text-center">
+        <div class="font-black text-green text-3xl">
+          {{ adminStore.pageViews.totals.week }}
+        </div>
+        <div>Views last 7 days</div>
       </div>
     </div>
   </div>
